@@ -1,18 +1,15 @@
 'use strict';
 
 var filmwebAPI = {
+	init: function() {
 
-	/* 
-		{
-			id: 		123,
-			title: 		'',
-			titleOrg: 	'', 
-		}
+	}, 
 
-	*/
-	search(title): function() {
+}
 
-	},
+
+filmwebAPI.Movies = {
+
 	/*	
 
 	input: 
@@ -43,12 +40,4 @@ var filmwebAPI = {
 	list(obj): function() {
 
 	},
-
-	get(parm): function() {
-
-	},
-
-	getFilms(): function() {
-
 }
-
