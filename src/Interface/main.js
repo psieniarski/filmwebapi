@@ -43,3 +43,6 @@ filmwebAPI.movies = {
 				
 	},
 };
+
+
+console.log(filmwebAPI);
