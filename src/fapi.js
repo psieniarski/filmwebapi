@@ -48,9 +48,9 @@ filmwebAPI.movies = {
 		return {
 			execute: function(response) {
 				var request = new proxy.Request(); 
-				var type =  'movies';
-
+		
 				Proxy.request({
+					type: 'movies-list',
 					data: data, 
 				});
 			}
