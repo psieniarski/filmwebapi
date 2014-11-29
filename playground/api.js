@@ -1,6 +1,6 @@
 /* Unofficial filmwebAPI */
 
-var XMLHttpRequest = require('xhr2');
+//var XMLHttpRequest = XMLHttpRequest || require('xhr2');
 var md5 		   = require('MD5');
 var settings 	   = require('./settings.js');
 
