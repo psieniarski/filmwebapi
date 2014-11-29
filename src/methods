@@ -1,0 +1,10 @@
+##Methods 
+
+pageNo = 0
+getFilmPersons(id, professionCode, 50*pageNo, 50*(1+pageNo));
+
+getFilmDescription(id);
+
+getFilmInfoFull(id); 
+
+
