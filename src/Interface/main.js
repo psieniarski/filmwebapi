@@ -51,4 +51,4 @@ filmwebAPI.movies = {
 };
 
 
-console.log(filmwebAPI.movies.list);
+console.log(filmwebAPI.movies.list({dupa:11}));
