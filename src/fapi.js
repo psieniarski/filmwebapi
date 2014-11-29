@@ -52,7 +52,7 @@ filmwebAPI.movies = {
 
 				Proxy.request({
 					data: data, 
-				})
+				});
 			}
 		}
 	},
