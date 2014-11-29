@@ -37,7 +37,7 @@ filmwebAPI.Movies = {
 		}]
 		
 	*/
-	list(obj): function() {
+	list: function(obj) {
 
 	},
 };
