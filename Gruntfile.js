@@ -15,7 +15,7 @@ module.exports = function(grunt) {
                   livereload: true
                 },
                 files: ["Gruntfile.js", "src/**", "readme.md"],
-                tasks: ['git:add', 'git:commit']
+                tasks: ['browserify', 'git:add', 'git:commit']
             },
         },
 
@@ -32,12 +32,21 @@ module.exports = function(grunt) {
             }
         },
 
+        browserify: {
+            dist: {
+                files: {
+                  'playground/bundle.js': ['playground/api.js'],
+                }
+            }
+        }
+
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-simple-git');
     grunt.loadNpmTasks('grunt-serve');
-    
+    grunt.loadNpmTasks('grunt-browserify');
+
     grunt.registerTask('default', ['watch']);
 
 };

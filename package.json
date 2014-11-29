@@ -5,8 +5,7 @@
     "grunt": "~0.4.5",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-simple-git": "~0.1.0",
-    "grunt-serve": "~0.1.6"
+    "grunt-serve": "~0.1.6",
+    "grunt-browserify": "~3.2.1"
   }
 }
-
-
