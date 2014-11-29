@@ -22,7 +22,6 @@ var filmwebAPI = {
 	}
 
 	output: 
-
 		items: [{
 			id: '',
 			token: '',
