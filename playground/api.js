@@ -3,7 +3,8 @@
 //var XMLHttpRequest = XMLHttpRequest || require('xhr2');
 var md5 		   = require('MD5');
 var settings 	   = require('./settings.js');
-
+var corsProxy      = 'http://localhost:8888/proxy/';
+ 
 // var prepareMethod = function(method, parms) {
 // 	return method + ' ' + JSON.stringify(parms) + '\\n';
 // }
@@ -87,5 +88,5 @@ var serialize = function(obj) {
 }
 
 
-xhr.open('GET', settings.urls.api+serialize(data), true); 
+xhr.open('GET', corsProxy + settings.urls.api + serialize(data), true); 
 xhr.send();
