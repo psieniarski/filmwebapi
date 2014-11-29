@@ -40,9 +40,13 @@ filmwebAPI.movies = {
 		
 	*/
 	list: function(obj) {
-		_.extend({
+		var data = _.extend({
 			test: 5, 
 		}, obj)
+
+		return {
+			data
+		}
 	},
 };
 
