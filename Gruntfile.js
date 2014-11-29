@@ -15,7 +15,7 @@ module.exports = function(grunt) {
                   livereload: true
                 },
                 files: ["Gruntfile.js", "src/**", "readme.md"],
-                tasks: ['browserify', 'git:add', 'git:commit']
+                tasks: ['browserify:dist', 'git:add', 'git:commit']
             },
         },
 
