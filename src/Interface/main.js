@@ -45,7 +45,7 @@ filmwebAPI.movies = {
 		}, obj)
 
 		return {
-			data
+			data: data
 		}
 	},
 };
