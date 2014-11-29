@@ -5,7 +5,7 @@ var filmwebAPI = {
 
 	}, 
 
-}
+};
 
 
 filmwebAPI.Movies = {
