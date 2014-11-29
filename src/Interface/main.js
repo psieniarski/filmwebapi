@@ -40,9 +40,9 @@ filmwebAPI.movies = {
 		
 	*/
 	list: function(obj) {
-				
+		_.extend()
 	},
 };
 
 
-console.log(filmwebAPI);
+console.log(_.extend);
