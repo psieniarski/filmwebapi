@@ -46,11 +46,13 @@ filmwebAPI.movies = {
 		}, obj)
 
 		return {
-			execute: function() {
+			execute: function(response) {
+				var request = new proxy.Request(); 
+				var type =  'movies';
+
 				Proxy.request({
-					type: 'movies',
-					data: data
-				}).send(); 
+					data: data, 
+				})
 			}
 		}
 	},
