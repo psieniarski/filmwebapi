@@ -1,5 +1,7 @@
 'use strict';
 
+var _ = require('underscore');
+
 var filmwebAPI = {
 	init: function() {
 
@@ -8,7 +10,7 @@ var filmwebAPI = {
 };
 
 
-filmwebAPI.Movies = {
+filmwebAPI.movies = {
 
 	/*	
 
@@ -38,6 +40,6 @@ filmwebAPI.Movies = {
 		
 	*/
 	list: function(obj) {
-
+				
 	},
 };
