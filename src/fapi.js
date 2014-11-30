@@ -22,6 +22,7 @@ filmwebAPI.movies = {
 	}
 
 	output: 
+	{
 		items: [{
 			id: '',
 			token: '',
@@ -38,6 +39,7 @@ filmwebAPI.movies = {
 				countries:    [],
 			}
 		}]
+	}
 		
 	*/
 	list: function(obj) {
