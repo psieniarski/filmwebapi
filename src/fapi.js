@@ -51,7 +51,8 @@ filmwebAPI.movies = {
 		
 				Proxy.request({
 					type: 'movies-list',
-					data: data, 
+					data: data,
+					onResponse: response 
 				});
 
 			}
