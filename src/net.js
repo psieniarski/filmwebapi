@@ -16,7 +16,7 @@ function XHR() {
 		return this;
 	};
 
-	this.response = function(callback) {
+	this.onResponse = function(callback) {
 		xhr.onreadystatechange = function() {
 		    if (xhr.readyState == 4) {
 		       callback(xhr.responseText);
