@@ -23,3 +23,4 @@ function XHR() {
 	};
 }
 
+console.log(new XHR());
