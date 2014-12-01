@@ -20,7 +20,7 @@ function XHR() {
 		       callback(xhr.responseText);
 		    }
 		}
-	}''
+	};
 }
 
 XHR.response(function(a) {

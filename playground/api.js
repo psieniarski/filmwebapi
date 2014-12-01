@@ -52,6 +52,10 @@ xhr.onreadystatechange = function() {
        console.log(JSON.stringify(xhr.responseText));
     }
 }
+
+xhr.open('GET', corsProxy + settings.urls.api + serialize(data), true); 
+xhr.send();
+
 // {
 //  appID: 'id',
 //  signiature: 'signiature',
@@ -88,5 +92,3 @@ var serialize = function(obj) {
 }
 
 
-xhr.open('GET', corsProxy + settings.urls.api + serialize(data), true); 
-xhr.send();

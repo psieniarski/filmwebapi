@@ -9,7 +9,7 @@ Request: function(obj) {
 
 	if (obj.type == 'movies-list') {
 		data = {
-			signature: createSigniature(method),
+			signature: this.createSigniature(method),
 			methods: method,  
 			appId: settings.appId,
 			version: settings.version
@@ -21,6 +21,13 @@ Request: function(obj) {
 
 	},
 }
+
+Request.prototype.getList = function() {
+
+
+
+
+};
 
 Request.prototype.prepareMethods = function(obj) {
 	var methods = [];
