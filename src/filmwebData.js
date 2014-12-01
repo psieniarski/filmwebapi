@@ -36,5 +36,5 @@ var filmwebData = {
 	}
 };
 
-filmwebData.ajax('search', 'q=oko');
-	
+var request = filmwebData.ajax('search', 'q=oko');
+console.log(request);	
