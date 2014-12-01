@@ -6,22 +6,29 @@ var XMLHttpRequest = require('xhr2');
 function XHR() {
 	var xhr = new XMLHttpRequest();
 	
+	xhr.onreadystatechange = function() {
+	    if (xhr.readyState == 4) {
+	       this.success(xhr.responseText);
+	    }
+	};
+
 	this.request = function(type, queryString) {
+		var status = {
+			success: {
+
+			},
+			error: {
+
+			}
+		} 
+
 		if (type == 'search' || type == 'data') {
 			xhr.open('GET',settings.urls[type] + parms, true); 
 			xhr.send();
 		} else {
 			log('Error: bad request type.'); 
 		}
-		return this;
-	};
-
-	this.onResponse = function(callback) {
-		xhr.onreadystatechange = function() {
-		    if (xhr.readyState == 4) {
-		       callback(xhr.responseText);
-		    }
-		};
+		return status;
 	};
 }
 
