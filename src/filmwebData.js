@@ -16,9 +16,8 @@ var filmwebData = {
 		xhr.onreadystatechange = function() {
 		    if (xhr.readyState == 4) {
 		    	status.allways(xhr.responseText);
-
+		    	log(xhr.responseText);
 		    	if (xhr.status == 200) {
-		    		log(xhr.responseText);
 		    		status.success(xhr.responseText);
 
 		    	} else {
