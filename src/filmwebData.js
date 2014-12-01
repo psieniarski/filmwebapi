@@ -29,7 +29,7 @@ var filmwebData = {
 			status.error('Error: bad request type.'); 
 		}
 		return status;
-	};
+	}
 };
 
 filmwebData.request('search', 'q=oko');
