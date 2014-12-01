@@ -40,6 +40,6 @@ var filmwebData = {
 };
 
 var request = filmwebData.ajax('search', 'q=oko');
-request.success(function(response) {
+request.error(function(response) {
 	console.log(response);
 });	
