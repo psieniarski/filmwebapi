@@ -31,4 +31,6 @@ var filmwebData = {
 		return status;
 	};
 };
+
+filmwebData.request('search', 'q=oko');
 	
