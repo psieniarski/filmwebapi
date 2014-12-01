@@ -1,4 +1,7 @@
 
+
+console.log(typeof module.exports.log );
+
 function XHR() {
 	var xhr = new XMLHttpRequest();
 	
