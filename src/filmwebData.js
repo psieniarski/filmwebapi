@@ -6,24 +6,24 @@ var XMLHttpRequest = require('xhr2');
 var filmwebData = {
 
 	ajax: function(type, queryString) {
-		var xhr 	= new XMLHttpRequest();
-		var status  = {};
+		var xhr 		= new XMLHttpRequest();
+		var status 		= {};
+		var response;
+
+		var states = ['always', 'success', 'error'];
+		var setState = function(state, callback) {
+			callback(response)
+		}
 
 		xhr.onreadystatechange = function() {
 		    if (xhr.readyState == 4) {
-		    	status.allways = function(callback) {
-		    		callback(xhr.responseText);
-		    	};
-		    	
+		    	status.allways(); 
+
 		    	if (xhr.status == 200) {
-		    		status.success = function(callback) {
-		    			callback(xhr.responseText);
-		    		};
+		    		status.success();
 
 		    	} else {
-		    		status.error = function(callback) {
-		    			callback(xhr.responseText);
-		    		};
+		    		status.error();
 		    	}
 		    }
 		};
