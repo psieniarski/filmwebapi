@@ -1,4 +1,5 @@
 
+var settings = require('./settings.js');
 
 console.log(typeof module.exports.log );
 
