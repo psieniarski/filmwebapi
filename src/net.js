@@ -1,7 +1,6 @@
 
 var settings = require('./settings.js');
-
-settings.log('oko');
+var log = settings.log;
 
 function XHR() {
 	var xhr = new XMLHttpRequest();
