@@ -16,7 +16,7 @@ var filmwebData = {
 		xhr.onreadystatechange = function() {
 		    if (xhr.readyState == 4) {
 		    	status.allways(xhr.responseText);
-		    	log(xhr.responseText);
+
 		    	if (xhr.status == 200) {
 		    		status.success(xhr.responseText);
 
@@ -41,6 +41,7 @@ var filmwebData = {
 };
 
 var request = filmwebData.ajax('search', 'q=oko');
+console.log(request.allways)
 request.allways(function(response) {
 	console.log(response);
 });	
