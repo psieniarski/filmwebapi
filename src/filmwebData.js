@@ -3,18 +3,22 @@ var log 	       = settings.log;
 var XMLHttpRequest = require('xhr2');
 
 
-function filmwebData() {
-	var xhr = new XMLHttpRequest();
-	
-	this.request = function(type, queryString) {
-		var status = {
+var filmwebData = {
+
+	ajax: function(type, queryString) {
+		var xhr 	= new XMLHttpRequest();
+		var status  = {
 			success: function(),
 			error: 	 function()
-		}; 
+		};
 
 		xhr.onreadystatechange = function() {
 		    if (xhr.readyState == 4) {
-		       status.success(xhr.responseText);
+		    	if (xhr.status == 200) {
+		    		status.success(xhr.responseText);
+		    	} else {
+		    		status.error('Error ' + xhr.status);
+		    	}
 		    }
 		};
 
@@ -26,6 +30,5 @@ function filmwebData() {
 		}
 		return status;
 	};
-}
-
-console.log(new XHR().request('oko', 'oko'));
+};
+	
