@@ -23,7 +23,7 @@ var filmwebData = {
 		};
 
 		if (type == 'search' || type == 'data') {
-			xhr.open('GET',settings.urls[type] + parms, true); 
+			xhr.open('GET',settings.urls[type] + queryString, true); 
 			xhr.send();
 		} else {
 			status.error('Error: bad request type.'); 
