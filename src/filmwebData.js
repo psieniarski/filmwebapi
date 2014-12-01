@@ -15,7 +15,6 @@ var filmwebData = {
 		    		callback(xhr.responseText);
 		    	}
 		    	
-
 		    	if (xhr.status == 200) {
 		    		status.success = function(callback) {
 		    			callback(xhr.responseText);
