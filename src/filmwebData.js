@@ -7,23 +7,23 @@ var filmwebData = {
 
 	ajax: function(type, queryString) {
 		var xhr 		= new XMLHttpRequest();
-		var status 		= {};
+		var state 		= {};
 		var response;
 
-		var states = ['always', 'success', 'error'];
-		var setState = function(state, callback) {
-			callback(response)
+		var setState = function(stateName, callbackArgs) {
+			var states = ['always', 'success', 'error'];
+			state[stateName]
 		}
 
 		xhr.onreadystatechange = function() {
 		    if (xhr.readyState == 4) {
-		    	status.allways(); 
+		    	state.always(); 
 
-		    	if (xhr.status == 200) {
-		    		status.success();
+		    	if (xhr.state == 200) {
+		    		state.success();
 
 		    	} else {
-		    		status.error();
+		    		state.error();
 		    	}
 		    }
 		};
@@ -32,9 +32,9 @@ var filmwebData = {
 			xhr.open('GET',settings.urls[type] + queryString, true); 
 			xhr.send();
 		} else {
-			status.error('Error: bad request type.'); 
+			state.error('Error: bad request type.'); 
 		}
-		return status;
+		return state;
 	},
 
 	search: function(queryString) {
@@ -44,6 +44,6 @@ var filmwebData = {
 
 var request = filmwebData.ajax('search', 'q=oko');
 
-request.allways(function(response) {
+request.always(function(response) {
 	console.log(response);
 });	
