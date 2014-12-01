@@ -10,7 +10,7 @@ function XHR() {
 			xhr.open('GET',settings.urls[type] + parms, true); 
 			xhr.send();
 		} else {
-			console.log('Error: bad request type.'); 
+			log('Error: bad request type.'); 
 		}
 
 		return this;
