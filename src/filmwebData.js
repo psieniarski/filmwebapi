@@ -18,10 +18,10 @@ var filmwebData = {
 		    	status.allways(xhr.responseText);
 
 		    	if (xhr.status == 200) {
+		    		log(xhr.responseText);
 		    		status.success(xhr.responseText);
 
 		    	} else {
-		    		console.log(xhr.responseText);
 		    		status.error('Error ' + xhr.status);
 		    	}
 		    }
