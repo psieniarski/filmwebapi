@@ -15,7 +15,8 @@ var filmwebData = {
 
 		xhr.onreadystatechange = function() {
 		    if (xhr.readyState == 4) {
-		    	status.allways(xhr.responseText)
+		    	status.allways(xhr.responseText);
+		    	console.log('oko')
 		    	if (xhr.status == 200) {
 		    		status.success(xhr.responseText);
 
