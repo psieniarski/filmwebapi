@@ -10,7 +10,7 @@ var filmwebData = {
 		var status  = {
 			success: function(response) {},
 			error: 	 function(errorMsg) {},
-			always:  function(response) {},
+			allways:  function(response) {},
 		};
 
 		xhr.onreadystatechange = function() {
