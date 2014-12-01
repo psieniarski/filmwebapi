@@ -29,6 +29,10 @@ var filmwebData = {
 			status.error('Error: bad request type.'); 
 		}
 		return status;
+	},
+
+	search: function(queryString) {
+		return this.ajax('search', queryString);
 	}
 };
 
