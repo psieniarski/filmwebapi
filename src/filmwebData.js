@@ -13,17 +13,17 @@ var filmwebData = {
 		    if (xhr.readyState == 4) {
 		    	status.allways = function(callback) {
 		    		callback(xhr.responseText);
-		    	}
+		    	};
 		    	
 		    	if (xhr.status == 200) {
 		    		status.success = function(callback) {
 		    			callback(xhr.responseText);
-		    		}
+		    		};
 
 		    	} else {
 		    		status.error = function(callback) {
 		    			callback(xhr.responseText);
-		    		}
+		    		};
 		    	}
 		    }
 		};
