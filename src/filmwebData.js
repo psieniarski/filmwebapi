@@ -7,21 +7,24 @@ var filmwebData = {
 
 	ajax: function(type, queryString) {
 		var xhr 	= new XMLHttpRequest();
-		var status  = {
-			success: function(response) {},
-			error: 	 function(errorMsg) {},
-			allways:  function(response) {},
-		};
+		var status  = {};
 
 		xhr.onreadystatechange = function() {
 		    if (xhr.readyState == 4) {
-		    	status.allways(xhr.responseText);
+		    	status.allways = function(callback) {
+		    		callback(xhr.responseText);
+		    	}
+		    	
 
 		    	if (xhr.status == 200) {
-		    		status.success(xhr.responseText);
+		    		status.success = function(callback) {
+		    			callback(xhr.responseText);
+		    		}
 
 		    	} else {
-		    		status.error('Error ' + xhr.status);
+		    		status.error = function(callback) {
+		    			callback(xhr.responseText);
+		    		}
 		    	}
 		    }
 		};
@@ -41,7 +44,7 @@ var filmwebData = {
 };
 
 var request = filmwebData.ajax('search', 'q=oko');
-console.log(request.allways)
+
 request.allways(function(response) {
 	console.log(response);
 });	
