@@ -41,6 +41,6 @@ var filmwebData = {
 };
 
 var request = filmwebData.ajax('search', 'q=oko');
-request.error(function(response) {
+request.allways(function(response) {
 	console.log(response);
 });	
