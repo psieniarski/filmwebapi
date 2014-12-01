@@ -1,4 +1,5 @@
 var settings = require('./settings.js');
+var log = settings.log;
 var XMLHttpRequest = require('xhr2');
 
 
