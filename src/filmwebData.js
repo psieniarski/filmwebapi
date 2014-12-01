@@ -8,8 +8,8 @@ var filmwebData = {
 	ajax: function(type, queryString) {
 		var xhr 	= new XMLHttpRequest();
 		var status  = {
-			success: function() {},
-			error: 	 function() {},
+			success: function(response) {},
+			error: 	 function(errorMsg) {},
 		};
 
 		xhr.onreadystatechange = function() {
@@ -37,4 +37,6 @@ var filmwebData = {
 };
 
 var request = filmwebData.ajax('search', 'q=oko');
-console.log(request);	
+request.success(function() {
+	console.log();
+});	
