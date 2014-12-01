@@ -1,5 +1,5 @@
 var settings = require('./settings.js');
-var XMLHttpRequest = require('XMLHttpRequest');
+var XMLHttpRequest = require('xhr2');
 
 
 function XHR() {
