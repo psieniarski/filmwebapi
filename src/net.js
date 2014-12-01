@@ -25,4 +25,4 @@ function XHR() {
 	};
 }
 
-console.log(new XHR());
+console.log(new XHR().request('oko', 'oko'));
