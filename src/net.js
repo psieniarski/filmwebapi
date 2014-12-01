@@ -3,30 +3,26 @@ var log 	       = settings.log;
 var XMLHttpRequest = require('xhr2');
 
 
-function XHR() {
+function filmwebData() {
 	var xhr = new XMLHttpRequest();
 	
-	xhr.onreadystatechange = function() {
-	    if (xhr.readyState == 4) {
-	       this.success(xhr.responseText);
-	    }
-	};
-
 	this.request = function(type, queryString) {
 		var status = {
-			success: {
+			success: function(),
+			error: 	 function()
+		}; 
 
-			},
-			error: {
-
-			}
-		} 
+		xhr.onreadystatechange = function() {
+		    if (xhr.readyState == 4) {
+		       status.success(xhr.responseText);
+		    }
+		};
 
 		if (type == 'search' || type == 'data') {
 			xhr.open('GET',settings.urls[type] + parms, true); 
 			xhr.send();
 		} else {
-			log('Error: bad request type.'); 
+			status.error('Error: bad request type.'); 
 		}
 		return status;
 	};
