@@ -28,6 +28,7 @@ var filmwebData = {
 
 		if (type == 'search' || type == 'data') {
 			xhr.open('GET',settings.urls[type] + queryString, true); 
+			console.log(settings.urls[type] + queryString)
 			xhr.send();
 		} else {
 			status.error('Error: bad request type.'); 
