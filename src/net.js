@@ -1,15 +1,17 @@
 
+
 function XHR() {
 	var xhr = new XMLHttpRequest();
 	
-	this.IDRequest = function(parms) {
-		xhr.open('GET',settings.urls.api + parms, true); 
-		xhr.send();
-	},
-
-	this.dataRequest = function(parms) {
-		xhr.open('GET',settings.urls.api + parms, true);
-		xhr.send();
+	this.request = function(type, queryString) {
+		if (type == 'search' || type == 'data') {
+			xhr.open('GET',settings.urls[type] + parms, true); 
+			xhr.send();
+		} else {
+			console.log('Error: bad request type.'); 
+		}
+		
+		return this;
 	},
 
 	this.response = function(callback) {
