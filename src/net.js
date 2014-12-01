@@ -1,6 +1,4 @@
-
 var settings = require('./settings.js');
-var log = settings.log;
 
 function XHR() {
 	var xhr = new XMLHttpRequest();
