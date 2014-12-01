@@ -19,8 +19,8 @@ function XHR() {
 		    if (xhr.readyState == 4) {
 		       callback(xhr.responseText);
 		    }
-		}
-	};
+		};
+	}
 }
 
 XHR.response(function(a) {
