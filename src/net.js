@@ -1,5 +1,4 @@
 
-
 function XHR() {
 	var xhr = new XMLHttpRequest();
 	
@@ -23,7 +22,3 @@ function XHR() {
 	};
 }
 
-XHR.response(function(a) {
-
-
-});
