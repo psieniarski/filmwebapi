@@ -8,8 +8,8 @@ var filmwebData = {
 	ajax: function(type, queryString) {
 		var xhr 	= new XMLHttpRequest();
 		var status  = {
-			success: function(),
-			error: 	 function()
+			success: function() {},
+			error: 	 function() {},
 		};
 
 		xhr.onreadystatechange = function() {
