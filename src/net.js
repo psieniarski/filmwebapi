@@ -10,7 +10,7 @@ function XHR() {
 		} else {
 			console.log('Error: bad request type.'); 
 		}
-		
+
 		return this;
 	},
 
@@ -20,7 +20,7 @@ function XHR() {
 		       callback(xhr.responseText);
 		    }
 		}
-	}
+	}''
 }
 
 XHR.response(function(a) {
