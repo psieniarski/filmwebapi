@@ -13,7 +13,6 @@ function XHR() {
 		} else {
 			log('Error: bad request type.'); 
 		}
-
 		return this;
 	};
 
