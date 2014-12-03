@@ -18,7 +18,6 @@ module.exports = {
 		    	} else {
 		    		errorMsg = 'Error: ' + xhr.status;
 		    		error ? error( errorMsg ) : log( errorMsg );
-		    		success( 'error' );
 		    	}
 		    }
 		};
