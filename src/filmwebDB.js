@@ -1,4 +1,5 @@
 var settings       = require('./settings.js');
+var convert		   = require('./convert.js');
 var log			   = settings.log;
 var XMLHttpRequest = require('xhr2');
 
@@ -30,7 +31,8 @@ var filmwebDB = {
 		}
 	},
 
-	search: function( queryString, success, error ) {
+	search: function( obj, success, error ) {
+
 		return this.ajax( 'search', queryString, success, error );
 	},
 
