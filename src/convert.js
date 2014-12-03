@@ -1,5 +1,5 @@
 module.exports = {
-	object2url: function(obj) {
+	obj2url: function(obj) {
 		var arr = []; 
 		for (prop in obj) {
 			if (obj.hasOwnProperty(prop)) {
