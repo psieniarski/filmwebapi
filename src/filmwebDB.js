@@ -13,7 +13,7 @@ module.exports = {
 
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
-		    		success( JSON.stringify( xhr.responseText ) );
+		    		success( 'test' );
 		    	} else {
 		    		errorMsg = 'Error: ' + xhr.status;
 		    		error ? error( errorMsg ) : log( errorMsg );
