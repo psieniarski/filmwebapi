@@ -14,7 +14,7 @@ module.exports = {
 		    		success( xhr );
 		    	} else {
 		    		if( error ) {
-		    			error( new Error('Error: ' + xhr.status);	
+		    			error( new Error('error');	
 		    		}
 		    	}
 		    }
