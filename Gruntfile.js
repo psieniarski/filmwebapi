@@ -33,9 +33,17 @@ module.exports = function(grunt) {
         },
 
         symlink: {            
-            explicit: {
-                src: 'src/*.js',
-                dest: 'node_modules/*.js'
+            expanded: {
+                files: [
+                    {
+                        expanded: true,
+                        overwrite: true,
+                        cwd: 'src',
+                        src: ['Proxy.js'],
+                        dest: 'node_modules/*.js',
+                        filter: 'isFile'
+                    },
+                ]
             },
         }
 
