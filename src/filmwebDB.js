@@ -22,8 +22,7 @@ var filmwebDB = {
 		    }
 		};
 
-		if ( type == 'search' || type == 'data' ) {
-			
+		if ( type == 'search' || type == 'data' ) {	
 			xhr.open( 'GET', settings.urls[type] + convert.obj2url(data), true ); 
 			xhr.send();	
 		}
