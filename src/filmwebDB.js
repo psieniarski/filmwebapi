@@ -13,7 +13,7 @@ var filmwebDB = {
 
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
-		    		success( xhr.responseText );
+		    		success( xhr );
 		    	} else {
 		    		errorMsg = 'Error: ' + xhr.status;
 		    		error ? error( errorMsg ) : log( errorMsg );
