@@ -40,7 +40,7 @@ module.exports = function(grunt) {
                         overwrite: true,
                         cwd: 'src',
                         src: ['*.js'],
-                        dest: 'node_moduless/',
+                        dest: 'node_modules/',
                         filter: 'isFile'
                     },
                 ]
