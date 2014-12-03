@@ -3,8 +3,6 @@ var XMLHttpRequest = require('xhr2');
 var settings       = require('settings.js');
 var convert		   = require('filmwebConvert');
 
-
-
 module.exports = {
 	ajax: function( type, data, callback ) {
 		var xhr;
