@@ -36,9 +36,3 @@ module.exports = {
 		this.ajax( 'data', obj, callback ); 
 	}
 };
-
-function n() {
-	return;
-}
-
-console.log(n());
