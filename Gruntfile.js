@@ -32,6 +32,8 @@ module.exports = function(grunt) {
             }
         },
 
+
+
         // browserify: {
         //     dist: {
         //         files: {
@@ -45,8 +47,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-simple-git');
     grunt.loadNpmTasks('grunt-serve');
+    grunt.loadNpmTasks('grunt-contrib-symlink');
+    
 //  grunt.loadNpmTasks('grunt-browserify');
-
+    
     grunt.registerTask('default', ['watch']);
 
 };
