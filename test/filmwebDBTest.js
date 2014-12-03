@@ -13,9 +13,9 @@ vows.describe('Interfejs niskopoziomowy').addBatch({
             var that = this;
             
             filmwebDB.search(obj, this.callback);
-            process.on('uncaughtException', function(err) {
-                console.log('Caught exception: ' + err.stack);
-            });
+            // process.on('uncaughtException', function(err) {
+            //     console.log('Caught exception: ' + err.stack);
+            // });
         },
 
         'zwraca obiekt xhr': function (err, response) {
