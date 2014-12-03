@@ -33,3 +33,8 @@ module.exports = {
 	}
 };
 
+var obj = { q: 'oko' }
+
+module.exports.search(obj, function(response) {
+	console.log(response.responseText);
+});
