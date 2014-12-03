@@ -1,8 +1,7 @@
 'use strict';
 
-
-var settings = require('./settings.js');
-var format	 = require('./format.js');
+var settings = require('settings');
+var format	 = require('format');
 
 Request: function(obj) {
 	var data; 
