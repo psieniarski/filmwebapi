@@ -4,7 +4,6 @@ var log			   = settings.log;
 var XMLHttpRequest = require('xhr2');
 
 module.exports = {
-
 	ajax: function( type, data, success, error ) {
 
 		var xhr = new XMLHttpRequest();
