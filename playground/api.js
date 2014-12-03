@@ -2,9 +2,10 @@
 
 //var XMLHttpRequest = XMLHttpRequest || require('xhr2');
 var md5 		   = require('MD5');
-var settings 	   = require('./settings.js');
+var settings 	   = require('../src/settings.js');
 var corsProxy      = 'http://localhost:8888/proxy/';
- 
+var XMLHttpRequest = require('xhr2');
+
 // var prepareMethod = function(method, parms) {
 // 	return method + ' ' + JSON.stringify(parms) + '\\n';
 // }
@@ -16,7 +17,7 @@ function brackets(str) {
 var prepareMethods = function(obj) {
 	var methods = [];
 
-	for (prop in obj) {
+	for (var prop in obj) {
 		if (obj.hasOwnProperty(prop)) {
 			if (prop == 'getFilmInfoFull') {
 				for (var i = obj[prop].length - 1; i >= 0; i--) { 
@@ -53,8 +54,6 @@ xhr.onreadystatechange = function() {
     }
 }
 
-xhr.open('GET', corsProxy + settings.urls.api + serialize(data), true); 
-xhr.send();
 
 // {
 //  appID: 'id',
@@ -77,7 +76,7 @@ var data = {
 
 // 1.0%2Cbc8a9c3ff30fd57ca51d0bddb2697794&_=1417130658605', true); 
 
-console.log(data);
+
 
 
 // Zamiena obiekt na zakodowany łańcuch znaków URI
@@ -92,3 +91,6 @@ var serialize = function(obj) {
 }
 
 
+console.log( settings.urls.data + serialize(data) );
+xhr.open('GET', settings.urls.data + serialize(data), true); 
+xhr.send();
