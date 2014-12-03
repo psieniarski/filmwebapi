@@ -1,11 +1,5 @@
 var filmwebProxy = require('filmwebProxy');
 
-var filmwebAPI = {
-	init: function() {
-
-	},
-
-};
 
 modules.export = {
 
@@ -56,7 +50,4 @@ modules.export = {
 			}
 		},
 	}
-
-
-
 }
