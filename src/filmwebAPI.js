@@ -1,6 +1,6 @@
 'use strict';
 
-var proxy = require('./proxy.js')
+var proxy = require('filmwebProxy')
 var _ = require('underscore');
 
 var filmwebAPI = {
