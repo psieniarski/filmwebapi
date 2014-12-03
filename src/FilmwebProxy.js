@@ -1,7 +1,7 @@
 'use strict';
 
 var settings = require('settings');
-var format	 = require('format');
+var format	 = require('filmwebFormat');
 
 Request: function(obj) {
 	var data; 
