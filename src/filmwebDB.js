@@ -38,7 +38,7 @@ module.exports = {
 };
 
 function n() {
-	return 1;
+	return;
 }
 
 console.log(n());
