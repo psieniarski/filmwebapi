@@ -13,16 +13,17 @@ vows.describe('Interfejs niskopoziomowy').addBatch({
             var that = this;
             
             filmwebDB.search(obj, this.callback);
+
             // process.on('uncaughtException', function(err) {
             //     console.log('Caught exception: ' + err.stack);
             // });
         },
 
         'zwraca obiekt xhr': function (err, response) {
-            assert.instanceOf(response, XMLHttpRequest)
+            assert.instanceOf(response, XMLHttpRequest);
         },
 
-        'posiada metode responseText, ktora zwraca ciag znakow': function(response) {
+        'posiada metode responseText, ktora zwraca ciag znakow': function(err, response) {
             assert.isString(response.responseText);
         }
     },
@@ -35,24 +36,18 @@ vows.describe('Interfejs niskopoziomowy').addBatch({
                 methods: 'getFilmInfoFull [10]\\ngetFilmInfoFull [8]\\ngetFilmInfoFull [7]\\ngetFilmInfoFull [6]\\ngetFilmInfoFull [5]\\ngetFilmInfoFull [4]\\ngetFilmInfoFull [3]\\ngetFilmInfoFull [2]\\ngetFilmInfoFull [1]\\n',
                 appId: 'android',
                 version: '1.0' 
-            }
+            };
  
             var that = this;
             
-            filmwebDB.getData(obj,function(response, err){
-                that.callback(err, response);
-                console.log();
-            });
-            // process.on('uncaughtException', function(err) {
-            //     console.log('Caught exception: ' + err.stack);
-            // });
+            filmwebDB.getData(obj, this.callback);
         },
 
         'zwraca obiekt xhr': function (err, response) {
-            assert.instanceOf(response, XMLHttpRequest)
+            assert.instanceOf(response, XMLHttpRequest);
         },
 
-        'posiada metode responseText, ktora zwraca ciag znakow': function(response) {
+        'posiada metode responseText, ktora zwraca ciag znakow': function(err, response) {
             assert.isString(response.responseText);
         }
     },
