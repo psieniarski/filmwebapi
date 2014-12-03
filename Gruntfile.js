@@ -35,7 +35,7 @@ module.exports = function(grunt) {
         symlink: {            
             explicit: {
                 src: 'src/Proxy.js',
-                dest: 'node_modules/'
+                dest: 'node_modules/Proxy.js'
             },
         }
 
