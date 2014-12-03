@@ -39,6 +39,6 @@ var filmwebDB = {
 
 var obj = { q: 'oko' }
 
-filmwebDB.getData(obj, function(response) {
+filmwebDB.search(obj, function(response) {
 	console.log(response.responseText);
 });
