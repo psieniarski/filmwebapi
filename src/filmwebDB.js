@@ -35,6 +35,6 @@ module.exports = {
 
 var obj = { q: 'oko' }
 
-module.exports.search(obj, function(response) {
-	console.log(response.responseText);
+module.exports.search(obj, function(err,response) {
+	console.log(err);
 });
