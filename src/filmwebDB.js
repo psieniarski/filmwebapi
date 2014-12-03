@@ -22,6 +22,10 @@ module.exports = {
 			xhr.open( 'GET', settings.urls[type] + convert.obj2url(data), true ); 
 			xhr.send();	
 		}
+
+		else {
+			callback( new Error( 'Unsupported type parameter:' + type ) );
+		}
 	},
 
 	search: function( obj, callback ) {
@@ -36,5 +40,5 @@ module.exports = {
 var obj = { q: 'oko' }
 
 module.exports.search(obj, function(err,response) {
-	console.log(response);
+	console.log();
 });
