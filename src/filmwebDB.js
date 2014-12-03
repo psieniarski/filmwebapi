@@ -26,19 +26,20 @@ var filmwebDB = {
 		
 			xhr.open( 'GET', settings.urls[type] + queryString, true ); 
 			xhr.send();	
-		
-			return xhr;
 		}
 	},
 
-	search: function( obj, success, error ) {
+	request: function(type, obj, success, error) {
 		var queryString = convert.obj2url(obj); 
-		return this.ajax( 'search', queryString, success, error );
+		this.ajax( type, queryString, success, error );
+	},
+
+	search: function( obj, success, error ) {
+		this.request('search', obj, success, error); 
 	},
 
 	getData: function( obj, success, error ) {
-		var queryString = convert.obj2url(obj);
-		return this.ajax( 'data', queryString, success, error );
+		this.request('data', obj, success, error); 
 	}
 };
 
