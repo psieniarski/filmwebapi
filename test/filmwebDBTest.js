@@ -2,7 +2,7 @@ var vows      = require('vows'),
     assert    = require('assert'),
     XMLHttpRequest = require('xhr2'),
 
-    filmwebDB = require('../src/filmwebDB.js');
+    filmwebDB = require('filmwebDB');
 
 
 // Create a Test Suite
