@@ -1,5 +1,5 @@
 var settings       = require('settings.js');
-var convert		   = require('convert');
+var convert		   = require('filmwebConvert');
 var log			   = settings.log;
 var XMLHttpRequest = require('xhr2');
 
