@@ -41,7 +41,7 @@ module.exports = function(grunt) {
                         cwd: 'src',
                         src: ['*.js'],
                         dest: 'node_modules/',
-                        // filter: 'isFile'
+                        filter: 'isFile'
                     },
                 ]
             },
