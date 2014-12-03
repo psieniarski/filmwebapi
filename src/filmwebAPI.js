@@ -40,12 +40,9 @@ modules.export = {
 				execute: function(response) {
 					var request = new filmwebProxy.Request(); 
 			
-					filmwebProxy.request({
-						type: 'movies-list',
-						data: data,
-						onResponse: response 
-					});
+					filmwebProxy.moviesList(data, function(err, result) {
 
+					});
 				}
 			}
 		},
