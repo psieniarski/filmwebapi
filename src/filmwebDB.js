@@ -11,7 +11,7 @@ module.exports = {
 		xhr.onreadystatechange = function() {
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
-		    		callback( null, xhr );
+		    		callback( null, 'none' );
 		    	} else {
 		    		callback( new Error( xhr.status ) );			
 		    	}
