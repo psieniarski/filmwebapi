@@ -4,18 +4,17 @@ var log			   = settings.log;
 var XMLHttpRequest = require('xhr2');
 
 module.exports = {
-	ajax: function( type, data, success, error ) {
+	ajax: function( type, data, callback ) {
 
 		var xhr = new XMLHttpRequest();
 		
 		xhr.onreadystatechange = function() {
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
-		    		success( xhr );
+		    		callback( null, xhr );
 		    	} else {
-		    		if( error ) {
-		    			error( new Error('error');	
-		    		}
+		    		callback( new Error('error') );	
+		    		
 		    	}
 		    }
 		};
