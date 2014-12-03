@@ -72,7 +72,7 @@ var data = {
 	appId: settings.appId,
 	version: settings.version
 }
-
+console.log(data);
 
 // 1.0%2Cbc8a9c3ff30fd57ca51d0bddb2697794&_=1417130658605', true); 
 

@@ -9,14 +9,11 @@ module.exports = {
 		var xhr = new XMLHttpRequest();
 		
 		xhr.onreadystatechange = function() {
-			var errorMsg = ''; 
-
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
 		    		success( xhr );
 		    	} else {
-		    		errorMsg = 'Error: ' + xhr.status;
-		    		error ? error( errorMsg ) : log( errorMsg );
+		    		error ? error( new Error('Error: ' + xhr.status) );
 		    	}
 		    }
 		};

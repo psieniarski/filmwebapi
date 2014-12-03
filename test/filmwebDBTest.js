@@ -1,42 +1,63 @@
 var vows      = require('vows'),
     assert    = require('assert'),
+    XMLHttpRequest = require('xhr2'),
 
     filmwebDB = require('../src/filmwebDB.js');
 
 
 // Create a Test Suite
 vows.describe('Interfejs niskopoziomowy').addBatch({
-    'kiedy wyszukamy fraze oko': {
+    'Asynchroniczna funkcja search': {
         topic: function () { 
             var obj = { q: 'oko' }; 
-            // filmwebDB.search(obj, this.callback);
             var that = this;
             
             filmwebDB.search(obj,function(response, err){
                 that.callback(err, response);
+                console.log();
             });
-
             // process.on('uncaughtException', function(err) {
             //     console.log('Caught exception: ' + err.stack);
             // });
         },
 
-        'Tekst odpowiedzi bedzie ciagiem znakow': function (err, response) {
-            console.log(response);
-            //assert.isString(response.responseText);
-            assert.isString(response);
+        'zwraca obiekt xhr': function (err, response) {
+            assert.instanceOf(response, XMLHttpRequest)
+        },
+
+        'posiada metode responseText, ktora zwraca ciag znakow': function(response) {
+            assert.isString(response.responseText);
         }
     },
-    'but when dividing zero by zero': {
-        topic: function () { return 0 / 0 },
 
-        'we get a value which': {
-            'is not a number': function (topic) {
-                assert.isNaN (topic);
-            },
-            'is not equal to itself': function (topic) {
-                assert.notEqual (topic, topic);
+    'Asynchroniczna funkcja getData': {
+        topic: function () { 
+            
+            var obj = {   
+                signature: '1.0,afc5f9ef12945c93e11789b43028698f',
+                methods: 'getFilmInfoFull [10]\\ngetFilmInfoFull [8]\\ngetFilmInfoFull [7]\\ngetFilmInfoFull [6]\\ngetFilmInfoFull [5]\\ngetFilmInfoFull [4]\\ngetFilmInfoFull [3]\\ngetFilmInfoFull [2]\\ngetFilmInfoFull [1]\\n',
+                appId: 'android',
+                version: '1.0' 
             }
+ 
+            var that = this;
+            
+            filmwebDB.getData(obj,function(response, err){
+                that.callback(err, response);
+                console.log();
+            });
+            // process.on('uncaughtException', function(err) {
+            //     console.log('Caught exception: ' + err.stack);
+            // });
+        },
+
+        'zwraca obiekt xhr': function (err, response) {
+            assert.instanceOf(response, XMLHttpRequest)
+        },
+
+        'posiada metode responseText, ktora zwraca ciag znakow': function(response) {
+            assert.isString(response.responseText);
         }
-    }
+    },
+
 }).run(); // Run it
