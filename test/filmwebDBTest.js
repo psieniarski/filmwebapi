@@ -10,7 +10,6 @@ vows.describe('Interfejs niskopoziomowy').addBatch({
         topic: function () { 
             var obj = { q: 'oko' }; 
             filmwebDB.search(obj, this.callback);
-
         },
 
         'Tekst odpowiedzi bedzie ciagiem znakow': function (response) {
