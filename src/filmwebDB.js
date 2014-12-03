@@ -13,7 +13,9 @@ module.exports = {
 		    	if ( xhr.status == 200 ) {
 		    		success( xhr );
 		    	} else {
-		    		error ? error( new Error('Error: ' + xhr.status) )
+		    		if( error ) {
+		    			error( new Error('Error: ' + xhr.status)	
+		    		}
 		    	}
 		    }
 		};
