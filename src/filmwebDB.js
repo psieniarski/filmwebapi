@@ -38,3 +38,6 @@ var filmwebDB = {
 		return this.ajax( 'data', queryString, success, error );
 	}
 };
+
+
+filmwebDB.search('q="oko"');
