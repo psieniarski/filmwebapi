@@ -37,8 +37,8 @@ module.exports = {
 	}
 };
 
-// var obj = { q: 'oko' }
+var obj = { q: 'oko' }
 
-// filmwebDB.search(obj, function(response) {
-// 	console.log(response.responseText);
-// });
+module.exports.search(obj, function(response) {
+	console.log(response.responseText);
+});
