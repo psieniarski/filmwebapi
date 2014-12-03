@@ -39,10 +39,7 @@ modules.export = {
 			return {
 				execute: function(response) {
 					var request = new filmwebProxy.Request(); 
-			
-					filmwebProxy.moviesList(data, function(err, result) {
-
-					});
+					request.moviesList(data, response);
 				}
 			}
 		},
