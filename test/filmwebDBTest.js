@@ -9,13 +9,14 @@ vows.describe('Interfejs niskopoziomowy').addBatch({
     'kiedy wyszukamy fraze oko': {
         topic: function () { 
             var obj = { q: 'oko' }; 
-            filmwebDB.search(obj, function(response){
-                this.callback(response.responseText)
-            });
+            filmwebDB.search(obj, this.callback);
+
         },
 
         'Tekst odpowiedzi bedzie ciagiem znakow': function (response) {
-            assert.isString(response.responseText);
+            console.log(response);
+            //assert.isString(response.responseText);
+            assert.equal('', response.responseText);
         }
     },
     'but when dividing zero by zero': {
