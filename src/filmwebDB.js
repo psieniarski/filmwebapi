@@ -24,7 +24,7 @@ module.exports = {
 		    }
 		};
 
-		xhr.open( 'GET', settings.urls[type] + convert.obj2url(data), true ); 
+		xhr.open( 'GET', settings.urls[type] + convert.obj2url(data)); 
 		xhr.send();	
 	},
 
