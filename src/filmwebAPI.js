@@ -41,11 +41,8 @@ filmwebAPI.movies = {
 	}
 		
 	*/
-	list: function(obj) {
-		var data = _.extend({
-			q:  '', 
-		}, obj);
-
+	list: function(data) {
+		
 		return {
 			execute: function(response) {
 				var request = new filmwebProxy.Request(); 
