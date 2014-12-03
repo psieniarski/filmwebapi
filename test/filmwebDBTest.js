@@ -1,13 +1,21 @@
-var vows = require('vows'),
-    assert = require('assert');
+var vows      = require('vows'),
+    assert    = require('assert'),
+
+    filmwebDB = require('../src/filmwebDB.js');
+
 
 // Create a Test Suite
 vows.describe('Interfejs niskopoziomowy').addBatch({
-    'when ': {
-        topic: function () { return 42 / 0 },
+    'kiedy wyszukamy fraze oko': {
+        topic: function () { 
+            var obj = { q: 'oko' }; 
+            filmwebDB.search(obj, function(response){
+                this.callback(response.responseText)
+            });
+        },
 
-        'we get Infinity': function (topic) {
-            assert.equal (topic, Infinity);
+        'Tekst odpowiedzi bedzie ciagiem znakow': function (response) {
+            assert.isString(response.responseText);
         }
     },
     'but when dividing zero by zero': {
