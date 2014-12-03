@@ -36,6 +36,7 @@ module.exports = function(grunt) {
             expanded: {
                 files: [
                     {
+                        expanded: true,
                         overwrite: true,
                         cwd: 'src',
                         src: ['*.js'],
