@@ -13,7 +13,7 @@ var filmwebDB = {
 
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
-		    		success ? success( xhr.responseText ) : log('Warning: callback is undefinded');
+		    		success( xhr.responseText );
 		    	} else {
 		    		errorMsg = 'Error: ' + xhr.status;
 		    		error ? error( errorMsg ) : log( errorMsg );
@@ -40,4 +40,4 @@ var filmwebDB = {
 };
 
 
-filmwebDB.search('q="oko"');
+filmwebDB.search('q="oko"', );
