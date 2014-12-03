@@ -1,6 +1,6 @@
 var XMLHttpRequest = require('xhr2');
 
-var settings       = require('settings.js');
+var settings       = require('settings');
 var convert		   = require('filmwebConvert');
 
 module.exports = {
