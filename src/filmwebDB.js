@@ -40,4 +40,6 @@ var filmwebDB = {
 };
 
 
-filmwebDB.search('q="oko"', );
+filmwebDB.search('q="oko"', function(response) {
+	console.log(response);
+});
