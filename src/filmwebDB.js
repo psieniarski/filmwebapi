@@ -29,11 +29,11 @@ module.exports = {
 	},
 
 	search: function( obj, callback ) {
-		this.ajax('search', obj, callback); 
+		this.ajax( 'search', obj, callback ); 
 	},
 
 	getData: function( obj, callback ) {
-		this.ajax('data', obj, callback); 
+		this.ajax( 'data', obj, callback ); 
 	}
 };
 
