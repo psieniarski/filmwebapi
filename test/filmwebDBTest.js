@@ -1,8 +1,7 @@
-var vows      = require('vows'),
-    assert    = require('assert'),
-    XMLHttpRequest = require('xhr2'),
-
-    filmwebDB = require('filmwebDB');
+var vows           = require('vows');
+var assert         = require('assert');
+var XMLHttpRequest = require('xhr2');
+var filmwebDB      = require('filmwebDB');
 
 
 // Create a Test Suite
