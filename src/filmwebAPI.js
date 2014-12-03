@@ -44,7 +44,6 @@ filmwebAPI.movies = {
 	list: function(obj) {
 		var data = _.extend({
 			q:  '', 
-			id: ''
 		}, obj);
 
 		return {
