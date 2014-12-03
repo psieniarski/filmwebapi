@@ -3,7 +3,7 @@ var convert		   = require('./convert.js');
 var log			   = settings.log;
 var XMLHttpRequest = require('xhr2');
 
-var filmwebDB = {
+module.exports = {
 
 	ajax: function( type, data, success, error ) {
 
