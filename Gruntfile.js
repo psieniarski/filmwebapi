@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                     {
                         expanded: true,
                         overwrite: true,
-                        cwd: 'src',
+                        cwd: 'src/',
                         src: ['Proxy.js'],
                         dest: 'node_modules/*.js',
                         filter: 'isFile'
