@@ -28,8 +28,8 @@ module.exports = {
 		}
 	},
 
-	search: function( obj, success) {
-		this.ajax('search', obj, success, function() {}); 
+	search: function( obj, success, error ) {
+		this.ajax('search', obj, success, error); 
 	},
 
 	getData: function( obj, success, error ) {
