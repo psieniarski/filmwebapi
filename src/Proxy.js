@@ -1,7 +1,7 @@
 'use strict';
 
 var settings = require('settings');
-var format	 = require('format');
+var format	 = require('format                        overwrite: true,');
 
 Request: function(obj) {
 	var data; 
