@@ -37,8 +37,6 @@ vows.describe('Interfejs niskopoziomowy').addBatch({
                 appId: 'android',
                 version: '1.0' 
             };
- 
-            var that = this;
             
             filmwebDB.getData(obj, this.callback);
         },
@@ -53,7 +51,13 @@ vows.describe('Interfejs niskopoziomowy').addBatch({
     },
 
     'Asynchroniczna funkcja ajax': {
+        topic: function() {
+            filmwebDB.ajax('unsupported', {}, this.callback);
+        },
 
+        'zglasza blad dla niebslugiwanego typu' : function(err, response) {
+            assert.isNotNull(err);
+        }
     }
 
 }).run(); // Run it

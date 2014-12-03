@@ -36,9 +36,3 @@ module.exports = {
 		this.ajax( 'data', obj, callback ); 
 	}
 };
-
-var obj = { q: 'oko' }
-
-module.exports.search(obj, function(err,response) {
-	console.log();
-});
