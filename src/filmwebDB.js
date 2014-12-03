@@ -34,7 +34,7 @@ var filmwebDB = {
 		return this.ajax( 'search', queryString, success, error );
 	},
 
-	get: function( queryString, success, error ) {
+	getData: function( queryString, success, error ) {
 		return this.ajax( 'data', queryString, success, error );
 	}
 };
