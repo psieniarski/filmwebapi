@@ -24,12 +24,12 @@ module.exports = {
 		}
 	},
 
-	search: function( obj, success, error ) {
-		this.ajax('search', obj, success, error); 
+	search: function( obj, callback ) {
+		this.ajax('search', obj, callback); 
 	},
 
-	getData: function( obj, success, error ) {
-		this.ajax('data', obj, success, error); 
+	getData: function( obj, callback ) {
+		this.ajax('data', obj, callback); 
 	}
 };
 

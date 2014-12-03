@@ -12,10 +12,7 @@ vows.describe('Interfejs niskopoziomowy').addBatch({
             var obj = { q: 'oko' }; 
             var that = this;
             
-            filmwebDB.search(obj,function(response, err){
-                that.callback(err, response);
-                console.log();
-            });
+            filmwebDB.search(obj,this.callback);
             // process.on('uncaughtException', function(err) {
             //     console.log('Caught exception: ' + err.stack);
             // });
