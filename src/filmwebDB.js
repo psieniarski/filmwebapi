@@ -13,8 +13,7 @@ module.exports = {
 		    	if ( xhr.status == 200 ) {
 		    		callback( null, xhr );
 		    	} else {
-		    		callback( new Error('error') );	
-		    		
+		    		callback( new Error('error') );			
 		    	}
 		    }
 		};
