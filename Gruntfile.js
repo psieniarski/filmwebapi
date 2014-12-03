@@ -15,7 +15,7 @@ module.exports = function(grunt) {
                   livereload: true
                 },
                 files: ["Gruntfile.js", "src/**", "readme.md"],
-                tasks: ['git:add', 'git:commit']
+                tasks: ['symlink', 'git:add', 'git:commit']
             },
         },
 
@@ -32,6 +32,19 @@ module.exports = function(grunt) {
             }
         },
 
+        symlink: {            
+            expanded: {
+                files: [
+                    {
+                        overwrite: true,
+                        cwd: 'src',
+                        src: ['*.js'],
+                        dest: 'build',
+                        filter: 'isFile'
+                    },
+                ]
+            },
+        }
 
 
         // browserify: {
@@ -48,9 +61,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-simple-git');
     grunt.loadNpmTasks('grunt-serve');
     grunt.loadNpmTasks('grunt-contrib-symlink');
-    
+
 //  grunt.loadNpmTasks('grunt-browserify');
     
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['symlink', 'watch']);
 
 };
