@@ -52,4 +52,8 @@ vows.describe('Interfejs niskopoziomowy').addBatch({
         }
     },
 
+    'Asynchroniczna funkcja ajax': {
+
+    }
+
 }).run(); // Run it

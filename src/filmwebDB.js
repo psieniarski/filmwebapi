@@ -5,8 +5,14 @@ var XMLHttpRequest = require('xhr2');
 
 module.exports = {
 	ajax: function( type, data, callback ) {
+		var xhr;
 
-		var xhr = new XMLHttpRequest();
+		if ( !(type == 'search' || type == 'data') ) {
+			callback( new Error( 'Unsupported type parameter:' + type ) );
+			return; 
+		}
+
+		xhr = new XMLHttpRequest();
 		
 		xhr.onreadystatechange = function() {
 		    if ( xhr.readyState == 4 ) {
@@ -18,14 +24,8 @@ module.exports = {
 		    }
 		};
 
-		if ( type == 'search' || type == 'data' ) {	
-			xhr.open( 'GET', settings.urls[type] + convert.obj2url(data), true ); 
-			xhr.send();	
-		}
-
-		else {
-			callback( new Error( 'Unsupported type parameter:' + type ) );
-		}
+		xhr.open( 'GET', settings.urls[type] + convert.obj2url(data), true ); 
+		xhr.send();	
 	},
 
 	search: function( obj, callback ) {
