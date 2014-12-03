@@ -32,7 +32,7 @@ var filmwebDB = {
 	},
 
 	search: function( obj, success, error ) {
-
+		var queryString = convert.obj2url(obj); 
 		return this.ajax( 'search', queryString, success, error );
 	},
 
