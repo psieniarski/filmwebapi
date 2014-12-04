@@ -11,13 +11,13 @@ module.exports = {
 
 	search2obj: function(searchResponse) {
 		var obj = {};
-		var arr = [];
+		var films = [];
 		var responseText = searchResponse.responseText.split('\\a');
 
 		for (var i = responseText.length - 1; i >= 0; i--) {
 			var part = (responseText[i].split('\\c'));
 			if (part.shift() == 'f') {  // jesli wynik jest filmem
-				arr.push(part);
+				films.push(part);
 			}
 		}
 
@@ -25,8 +25,8 @@ module.exports = {
 		obj.items = [];  
 		 
 
-		for (var i = 0; i < arr.length; i++) {
-			var film = arr[i];
+		for (var i = 0; i < films.length; i++) {
+			var film = films[i];
 			var item = {
 				id: 		film[0],
 				thumbnails: film[1],
