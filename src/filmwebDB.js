@@ -44,14 +44,8 @@ module.exports = {
 			 
 
 			for (var i = 0; i < arr.length; i++) {
-				var subarr = arr[i];
-				var item = {};  
-				for (var j = 0; j < subarr.length; j++) {
-					switch(j) {
-						case 0:
-							item.title = subarr[j];
-							break;
-					}
+				var item = {
+					id: arr[i][0];
 				}
 				console.log(item)
 				
