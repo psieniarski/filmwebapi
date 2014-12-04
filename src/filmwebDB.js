@@ -29,11 +29,14 @@ module.exports = {
 	},
 
 	search: function( obj, callback ) {
-		this.ajax( 'search', obj, function(err, success) { 
+		this.ajax( 'search', obj, function(err, response) { 
+			var newObj; 
 			
+			if (response) {
+				newObj = responseStr2obj(success);	
+			}
 			
-
-			callback(null, newObj);
+			callback(err, newObj);
 		}); 
 	},
 
