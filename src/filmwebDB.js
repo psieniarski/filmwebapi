@@ -38,7 +38,6 @@ module.exports = {
 					arr.push(part);
 				}
 			}
-			console.log(arr);
 			callback(null, arr);
 		}); 
 	},
