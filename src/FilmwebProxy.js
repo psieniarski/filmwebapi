@@ -17,7 +17,7 @@ module.exports = {
 	}
 }
 
-
+new module.exports.Request();
 
 // Request.prototype.getList = function() {
 
