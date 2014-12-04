@@ -30,10 +30,11 @@ module.exports = {
 
 	search: function( obj, callback ) {
 		this.ajax( 'search', obj, function(err, success) { 
-			var parts = success.responseText.split('\\a');
+
+			var films = success.responseText.split('\\a');
 			var arr = [];
-			for (var i = parts.length - 1; i >= 0; i--) {
-				var part = (parts[i].split('\\c'));
+			for (var i = films.length - 1; i >= 0; i--) {
+				var part = (films[i].split('\\c'));
 				if (part.shift() == 'f') {
 					arr.push(part);
 				}
