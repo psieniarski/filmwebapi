@@ -1,6 +1,6 @@
 var filmwebProxy = require('filmwebProxy');
 var Request = filmwebProxy.Request;
-'use strict';
+
 modules.export = {
 
 	movies: {
