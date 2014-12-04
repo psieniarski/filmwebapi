@@ -9,11 +9,11 @@ module.exports = {
 
 		this.moviesList = function(data, response) {
 			obj.q = data.q;  
-		},
+		};
 
 		this.execute = function(response) {
 			filmwebDB.search(obj, response);
-		},
+		};
 	}
 }
 
