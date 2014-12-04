@@ -20,7 +20,7 @@ module.exports = {
 
 var request = new module.exports.Request();
 request.moviesList({q:'oko'}).execute(function(err, result) {
-	console.log(result);
+	console.log(result.responseText);
 });
 // Request.prototype.getList = function() {
 
