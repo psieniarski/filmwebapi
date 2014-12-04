@@ -43,7 +43,7 @@ module.exports = {
 
 			for (var i = 0; i < arr.length; i++) {
 				var subarr = arr[i];  
-				for (var j = 0; i < subarr.length; j++) {
+				for (var j = 0; j < subarr.length; j++) {
 					console.log(subarr[j]);
 				}
 				
