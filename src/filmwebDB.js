@@ -29,7 +29,17 @@ module.exports = {
 	},
 
 	search: function( obj, callback ) {
-		this.ajax( 'search', obj, callback ); 
+		this.ajax( 'search', obj, function() {
+			var results = [];
+			for (var i = parts.length - 1; i >= 0; i--) {
+				var part = (parts[i].split('\\c'));
+				if (part.shift() == 'f') {
+					results.push(part);
+				}
+			}
+
+			callback(results);
+		}); 
 	},
 
 	getData: function( obj, callback ) {
