@@ -53,6 +53,7 @@ module.exports = {
 							break;
 					}
 				}
+				console.log(item)
 				
 			};
 
