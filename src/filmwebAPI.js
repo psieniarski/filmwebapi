@@ -38,6 +38,7 @@ module.exports = {
 				execute: function(response) {
 					var request = new filmwebProxy.Request(); 
 					request.moviesList(data, response);
+					console.log(response);
 				}
 			}
 		},
