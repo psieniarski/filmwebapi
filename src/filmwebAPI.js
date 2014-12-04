@@ -50,7 +50,7 @@ modules.export = {
 // });
 
 
-var request = new filmwebProxy.Request();
+var request = filmwebProxy.Request();
 request.moviesList({q:'oko'}).execute(function(err, result) {
 	console.log(result);
 });
