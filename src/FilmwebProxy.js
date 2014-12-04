@@ -4,7 +4,6 @@ var format	  = require('filmwebFormat');
 var filmwebDB = require('filmwebDB');
 
 module.exports = {
-	
 	Request: function() {
 		var obj = {};
 
