@@ -9,9 +9,9 @@ module.exports = {
 		return arr.join('&');
 	},
 
-	search2obj: function() {
+	search2obj: function(searchResponse) {
 
-		var films = success.responseText.split('\\a');
+		var films = searchResponse.responseText.split('\\a');
 			var arr = [];
 			for (var i = films.length - 1; i >= 0; i--) {
 				var part = (films[i].split('\\c'));
