@@ -45,7 +45,7 @@ module.exports = {
 
 			for (var i = 0; i < arr.length; i++) {
 				var item = {
-					id: arr[i][0];
+					id: arr[i][0]
 				}
 				console.log(item)
 				
