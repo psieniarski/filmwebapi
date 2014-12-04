@@ -40,7 +40,7 @@ module.exports = {
 				}
 			}
 
-			callback(null, result);
+			callback(null, results);
 		}); 
 	},
 
