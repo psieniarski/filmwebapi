@@ -33,7 +33,7 @@ module.exports = {
 			var newObj; 
 
 			if (response) {
-				newObj = responseStr2obj(response.responseText);	
+				newObj = convert.responseStr2obj(response.responseText);	
 			}
 			
 			callback(err, newObj);
