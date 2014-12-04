@@ -10,7 +10,7 @@ module.exports = {
 	},
 
 	search2obj: function(searchResponse) {
-		var obj = {};
+		var obj = { items: [] };
 		var films = [];
 		var responseText = searchResponse.responseText.split('\\a');
 
@@ -20,10 +20,6 @@ module.exports = {
 				films.push(part);
 			}
 		}
-
-		
-		obj.items = [];  
-		 
 
 		for (var i = 0; i < films.length; i++) {
 			var film = films[i];
@@ -35,9 +31,9 @@ module.exports = {
 				caption2: 	film[4],
 				year:       film[5] 
 			}
-			newObj.items.push(item);
+			obj.items.push(item);
 		};
 
-		return newObj;	
+		return obj;	
 	}
 };
