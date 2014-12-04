@@ -39,7 +39,8 @@ module.exports = {
 				}
 			}
 
-			var newObj = {}; 
+			var newObj = {};
+			newObj.items = [];  
 
 			for (var i = 0; i < arr.length; i++) {
 				var subarr = arr[i];  
