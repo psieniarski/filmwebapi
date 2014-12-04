@@ -9,13 +9,14 @@ module.exports = {
 		return arr.join('&');
 	},
 
-	search2obj: function(searchResponse) {
+
+	str2obj: function(str) {
 		var obj = { items: [] };
 		var films = [];
-		var responseText = searchResponse.responseText.split('\\a');
+		var str = str.split('\\a');
 
-		for (var i = responseText.length - 1; i >= 0; i--) {
-			var part = (responseText[i].split('\\c'));
+		for (var i = str.length - 1; i >= 0; i--) {
+			var part = (str[i].split('\\c'));
 			if (part.shift() == 'f') {  // jesli wynik jest filmem
 				films.push(part);
 			}
