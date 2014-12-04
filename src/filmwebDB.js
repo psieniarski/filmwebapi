@@ -47,8 +47,7 @@ module.exports = {
 				var subarr = arr[i];
 				var item = {};  
 				for (var j = 0; j < subarr.length; j++) {
-					console.log(subbarr[j].indexOf());
-					switch(subbarr[j].indexOf()) {
+					switch(j) {
 						case 0:
 							item.title = subarr[j];
 							break;
