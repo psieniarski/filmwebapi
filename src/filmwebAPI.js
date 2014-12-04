@@ -33,12 +33,15 @@ module.exports = {
 		}
 			
 		*/
-		list: function(data) {
+		_Request: function(data) {
+
+		},
+
+		list: function(obj) {
 			return {
+				var request = new this._Request(obj);
 				execute: function(response) {
-					var request = new filmwebProxy.Request(); 
-					request.moviesList(data, response);
-					console.log(response);
+				 	filmwebProxy.addRequest(request);
 				}
 			}
 		},
