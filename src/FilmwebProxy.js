@@ -1,5 +1,3 @@
-'use strict';
-
 var settings  = require('settings');
 var format	  = require('filmwebFormat');
 
