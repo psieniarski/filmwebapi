@@ -3,24 +3,26 @@ var format	  = require('filmwebFormat');
 
 var filmwebDB = require('filmwebDB');
 
-module.exports = function Request() {
+module.exports = {
+	Request: function() {
 		var obj = {};
 
-		this.moviesList = function(data, response) {
-			obj.q = data.q;
+		this.moviesList = function(data) {
 			return {
 				execute: function(response) {
-					filmwebDB.search(obj, response);
+					console.log(response);
+					filmwebDB.search(data, response);
 				}
-			}  
+			};
 		};
 	}
-}
+};
 
-var request = new module.exports.Request();
-request.moviesList({q:'oko'}).execute(function(err, result) {
-	console.log(result);
-});
+// new module.exports.Request().moviesList({q:'oko'}).execute(function(err, obj) {
+// 	console.log(obj);
+// });
+
+
 // Request.prototype.getList = function() {
 
 

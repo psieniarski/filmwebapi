@@ -35,6 +35,7 @@ module.exports = {
 			if (response) {
 				newObj = convert.responseStr2obj(response.responseText);	
 			}
+			console.log(newObj)
 			
 			callback(err, newObj);
 		}); 
@@ -44,3 +45,8 @@ module.exports = {
 		this.ajax( 'data', obj, callback ); 
 	}
 };
+
+
+// module.exports.search({q: 'oko'}, function(err, response) {
+// 	console.log(response);
+// });
