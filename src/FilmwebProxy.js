@@ -13,8 +13,8 @@ module.exports = {
 			obj.q = data.q;  
 		},
 
-		this.execute = function() {
-			s
+		this.execute = function(response) {
+			filmwebDB.search(obj, response);
 		},
 	}
 }
