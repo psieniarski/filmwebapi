@@ -2,9 +2,9 @@ var settings  = require('settings');
 var format	  = require('filmwebFormat');
 
 var filmwebDB = require('filmwebDB');
-
+'use strict';
 module.exports = {
-	'use strict',
+
 	Request: function() {
 		var obj = {};
 
