@@ -32,15 +32,15 @@ module.exports = {
 		this.ajax( 'search', obj, function(err, result) {
 			console.log(result); 
 			var parts = result.responseText.split('\\a');
-			var results = [];
+			var arr = [];
 			for (var i = parts.length - 1; i >= 0; i--) {
 				var part = (parts[i].split('\\c'));
 				if (part.shift() == 'f') {
-					results.push(part);
+					arr.push(part);
 				}
 			}
 
-			callback(null, results);
+			callback(null, arr);
 		}); 
 	},
 
