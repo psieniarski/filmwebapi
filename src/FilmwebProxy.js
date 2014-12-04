@@ -17,8 +17,8 @@ module.exports = {
 	}
 }
 
-new module.exports.Request();
-
+var request = new module.exports.Request();
+console.log(request);
 // Request.prototype.getList = function() {
 
 
