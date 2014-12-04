@@ -1,4 +1,5 @@
 var filmwebProxy = require('filmwebProxy');
+var Request = filmwebProxy.Request;
 
 modules.export = {
 
@@ -50,8 +51,8 @@ modules.export = {
 // });
 
 
-var request = filmwebProxy.Request;
+var request = Request();
 
-new request().moviesList({q:'oko'}).execute(function(err, result) {
+request.moviesList({q:'oko'}).execute(function(err, result) {
 	console.log(result);
 });
