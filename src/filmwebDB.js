@@ -31,7 +31,6 @@ module.exports = {
 	search: function( obj, callback ) {
 		this.ajax( 'search', obj, function(err, success) { 
 			var parts = success.responseText.split('\\a');
-			console.log(parts);
 			var arr = [];
 			for (var i = parts.length - 1; i >= 0; i--) {
 				var part = (parts[i].split('\\c'));
@@ -39,7 +38,7 @@ module.exports = {
 					arr.push(part);
 				}
 			}
-
+			console.log(arr);
 			callback(null, arr);
 		}); 
 	},
