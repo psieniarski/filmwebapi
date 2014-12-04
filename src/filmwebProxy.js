@@ -16,6 +16,10 @@ module.exports = {
 	// 		};
 	// 	};
 	// }
+
+	addRequest: function(req) {
+		console.log(req);
+	}
 };
 
 // new module.exports.Request().moviesList({q:'oko'}).execute(function(err, obj) {
