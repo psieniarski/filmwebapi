@@ -44,8 +44,14 @@ module.exports = {
 			 
 
 			for (var i = 0; i < arr.length; i++) {
+				var film = arr[i];
 				var item = {
-					id: arr[i][0]
+					id: 		film[0],
+					thumbnails: film[1],
+					title:      film[2],
+					caption:    film[3],
+					caption2: 	film[4],
+					year:       film[5] 
 				}
 				console.log(item)
 				
