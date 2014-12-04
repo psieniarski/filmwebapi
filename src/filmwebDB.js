@@ -30,7 +30,7 @@ module.exports = {
 
 	search: function( obj, callback ) {
 		this.ajax( 'search', obj, function(err, result) {
-
+			console.log(result)
 			var parts = result.responseText.split('\\a');
 			var results = [];
 			for (var i = parts.length - 1; i >= 0; i--) {
