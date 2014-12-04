@@ -45,6 +45,12 @@ modules.export = {
 }
 
 
-module.exports.movies.list({q: 'oko'}).execute(function(response) {
-	console.log(response);
+// module.exports.movies.list({q: 'oko'}).execute(function(response) {
+// 	console.log(response);
+// });
+
+
+var request = new filmwebProxy.Request();
+request.moviesList({q:'oko'}).execute(function(err, result) {
+	console.log(result);
 });
