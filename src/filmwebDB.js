@@ -39,6 +39,16 @@ module.exports = {
 				}
 			}
 
+			var newObj = {}; 
+
+			for (var i = 0; i < arr.length; i++) {
+				var subarr = arr[i];  
+				for (var j = 0; i < subarr.length; i++) {
+					console.log(subarr[j]);
+				}
+				
+			};
+
 
 
 			callback(null, arr);
