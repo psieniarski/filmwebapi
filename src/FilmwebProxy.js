@@ -1,25 +1,25 @@
 'use strict';
 
-var settings = require('settings');
-var format	 = require('filmwebFormat');
+var settings  = require('settings');
+var format	  = require('filmwebFormat');
 
-Request: function(obj) {
-	var data; 
+var filmwebDB = require('filmwebDB');
 
-	if (obj.type == 'movies-list') {
-		data = {
-			signature: this.createSigniature(method),
-			methods: method,  
-			appId: settings.appId,
-			version: settings.version
-		}
-	} 
+module.exports = {
+	Request: function() {
+		var obj = {};
 
+		this.moviesList = function(data, response) {
+			obj.q = data.q;  
+		},
 
-	this.execute = function() {
-
-	},
+		this.execute = function() {
+			s
+		},
+	}
 }
+
+
 
 Request.prototype.getList = function() {
 
