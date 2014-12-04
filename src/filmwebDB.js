@@ -41,11 +41,13 @@ module.exports = {
 
 			var newObj = {};
 			newObj.items = [];  
+			 
 
 			for (var i = 0; i < arr.length; i++) {
-				var subarr = arr[i];  
+				var subarr = arr[i];
+				var item = {};  
 				for (var j = 0; j < subarr.length; j++) {
-					console.log(subarr[j]);
+					item.test = subarr[j];
 				}
 				
 			};
