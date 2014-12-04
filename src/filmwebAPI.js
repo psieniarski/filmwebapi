@@ -47,7 +47,7 @@ module.exports = {
 
 
 module.exports.movies.list({q: 'oko'}).execute(function(err, response) {
-	console.log(response);
+	console.log(err, response);
 });
 
 
