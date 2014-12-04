@@ -36,6 +36,8 @@ module.exports = {
 				}
 				newObj.items.push(item);
 			};
+
+			return newObj;	
 		}
 	}
 };
