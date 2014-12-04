@@ -47,7 +47,11 @@ module.exports = {
 				var subarr = arr[i];
 				var item = {};  
 				for (var j = 0; j < subarr.length; j++) {
-					item.test = subarr[j];
+					switch(subbarr[j].indexOf()) {
+						case(0):
+							item.title = subarr[j];
+							break;
+					}
 				}
 				
 			};
