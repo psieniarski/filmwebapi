@@ -9,11 +9,10 @@ module.exports = {
 		return arr.join('&');
 	},
 
-
-	str2obj: function(str) {
+	responseStr2obj: function(responseStr) {
 		var obj = { items: [] };
 		var films = [];
-		var str = str.split('\\a');
+		var str = responseStr.split('\\a');
 
 		for (var i = str.length - 1; i >= 0; i--) {
 			var part = (str[i].split('\\c'));
