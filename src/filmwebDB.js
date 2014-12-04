@@ -48,7 +48,7 @@ module.exports = {
 				var item = {};  
 				for (var j = 0; j < subarr.length; j++) {
 					switch(subbarr[j].indexOf()) {
-						case(0):
+						case 0:
 							item.title = subarr[j];
 							break;
 					}
