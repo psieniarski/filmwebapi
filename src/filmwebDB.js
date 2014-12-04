@@ -35,9 +35,12 @@ module.exports = {
 			for (var i = parts.length - 1; i >= 0; i--) {
 				var part = (parts[i].split('\\c'));
 				if (part.shift() == 'f') {
-					arr.push(part);
+					//arr.push(part);
 				}
 			}
+
+
+
 			callback(null, arr);
 		}); 
 	},
