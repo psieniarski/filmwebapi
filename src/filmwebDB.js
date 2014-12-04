@@ -31,9 +31,9 @@ module.exports = {
 	search: function( obj, callback ) {
 		this.ajax( 'search', obj, function(err, response) { 
 			var newObj; 
-			
+
 			if (response) {
-				newObj = responseStr2obj(success);	
+				newObj = responseStr2obj(response.responseText);	
 			}
 			
 			callback(err, newObj);
