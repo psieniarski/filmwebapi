@@ -10,34 +10,34 @@ module.exports = {
 	},
 
 	search2obj: function(searchResponse) {
+		var obj = {};
+		var arr = [];
+		var responseText = searchResponse.responseText.split('\\a');
 
-		var films = searchResponse.responseText.split('\\a');
-			var arr = [];
-			for (var i = films.length - 1; i >= 0; i--) {
-				var part = (films[i].split('\\c'));
-				if (part.shift() == 'f') {  // jesli wynik jest filmem
-					arr.push(part);
-				}
+		for (var i = responseText.length - 1; i >= 0; i--) {
+			var part = (responseText[i].split('\\c'));
+			if (part.shift() == 'f') {  // jesli wynik jest filmem
+				arr.push(part);
 			}
-
-			var newObj = {};
-			newObj.items = [];  
-			 
-
-			for (var i = 0; i < arr.length; i++) {
-				var film = arr[i];
-				var item = {
-					id: 		film[0],
-					thumbnails: film[1],
-					title:      film[2],
-					caption:    film[3],
-					caption2: 	film[4],
-					year:       film[5] 
-				}
-				newObj.items.push(item);
-			};
-
-			return newObj;	
 		}
+
+		
+		obj.items = [];  
+		 
+
+		for (var i = 0; i < arr.length; i++) {
+			var film = arr[i];
+			var item = {
+				id: 		film[0],
+				thumbnails: film[1],
+				title:      film[2],
+				caption:    film[3],
+				caption2: 	film[4],
+				year:       film[5] 
+			}
+			newObj.items.push(item);
+		};
+
+		return newObj;	
 	}
 };
