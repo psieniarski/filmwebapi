@@ -8,11 +8,12 @@ module.exports = {
 		var obj = {};
 
 		this.moviesList = function(data, response) {
-			obj.q = data.q;  
-		};
-
-		this.execute = function(response) {
-			filmwebDB.search(obj, response);
+			obj.q = data.q;
+			return {
+				execute: function(response) {
+					filmwebDB.search(obj, response);
+				}
+			}  
 		};
 	}
 }
