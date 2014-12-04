@@ -53,13 +53,10 @@ module.exports = {
 					caption2: 	film[4],
 					year:       film[5] 
 				}
-				console.log(item)
-				
+				newObj.items.push(item);
 			};
 
-
-
-			callback(null, arr);
+			callback(null, newObj);
 		}); 
 	},
 
