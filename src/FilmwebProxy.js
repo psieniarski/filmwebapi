@@ -18,7 +18,9 @@ module.exports = {
 }
 
 var request = new module.exports.Request();
-console.log(request);
+request.moviesList({q:'oko'}, function(err, result) {
+	console.log(result);
+});
 // Request.prototype.getList = function() {
 
 
