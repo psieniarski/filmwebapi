@@ -4,17 +4,17 @@ var format	  = require('filmwebFormat');
 var filmwebDB = require('filmwebDB');
 
 module.exports = {
-	Request: function() {
-		var obj = {};
+	// Request: function() {
+	// 	var obj = {};
 
-		this.moviesList = function(data) {
-			return {
-				execute: function(response) {
-					console.log(response);
-					filmwebDB.search(data, response);
-				}
-			};
-		};
+	// 	this.moviesList = function(data) {
+	// 		return {
+	// 			execute: function(response) {
+	// 				console.log(response);
+	// 				filmwebDB.search(data, response);
+	// 			}
+	// 		};
+	// 	};
 	}
 };
 
