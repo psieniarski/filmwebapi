@@ -3,8 +3,7 @@ var format	  = require('filmwebFormat');
 
 var filmwebDB = require('filmwebDB');
 
-module.exports = {
-	Request: function() {
+module.exports = function Request() {
 		var obj = {};
 
 		this.moviesList = function(data, response) {
