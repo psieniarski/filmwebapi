@@ -45,8 +45,7 @@ module.exports = {
 			console.log(response);			
 		});
 	}
-
-}
+};
 // new module.exports.Request().moviesList({q:'oko'}).execute(function(err, obj) {
 // 	console.log(obj);
 // });
