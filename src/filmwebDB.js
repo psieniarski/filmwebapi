@@ -49,7 +49,7 @@ FilmwebDB.prototype = {
 		    	if ( xhr.status == 200 ) {
 		    		callback( null, xhr );
 		    		console.log(this.emitter);
-		    		this.emitter.emit('oko', xhr);
+		    		this.emit('oko', xhr);
 
 		    	} else {
 		    		callback( new Error( xhr.status ) );			
