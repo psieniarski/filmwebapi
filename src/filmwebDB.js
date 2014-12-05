@@ -7,7 +7,7 @@ var settings       = require( 'settings' );
 var convert		   = require( 'filmwebConvert' );
 var format		   = require( 'filmwebFormat' );
 
-module.exports = {
+var filmwebDB = {
 
 	_createSignature: function( method ) {
 		var hash = md5( method + settings.appId + settings.apiKey );
