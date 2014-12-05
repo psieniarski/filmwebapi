@@ -1,7 +1,10 @@
-var obj = { oko: 2}
-
-for (prop in obj) {
-	if (obj.hasOwnProperty(prop)) {
-		console.log( prop.indexOf('oko') );
-	}
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
+ 
+var ringBell = function ringBell()
+{
+  console.log('ring ring ring');
 }
+eventEmitter.on('doorOpen', ringBell);
+ 
+eventEmitter.emit('doorOpen');

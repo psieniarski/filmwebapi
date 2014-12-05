@@ -47,6 +47,6 @@ module.exports = {
 };
 
 
-// module.exports.search({q: 'oko'}, function(err, response) {
-// 	console.log(response);
-// });
+module.exports.search({q: 'oko'}, function(err, response) {
+	console.log(response);
+});
