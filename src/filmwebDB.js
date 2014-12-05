@@ -80,7 +80,7 @@ module.exports = {
 
 
 var convertData = function(str) {
-	return str.split('\n');
+	return str.split('\n').shift();
 }
 
 var d = {
