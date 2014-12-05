@@ -78,10 +78,11 @@ module.exports = {
 };
 
 
-var meth = module.exports._prepareMethods({getFilmInfoFull: [3122,1234,111,23]}); 
-console.log(meth);
 
+var d = {
+	getFilmInfoFull: [1,2,3,4,5],	
+}
 
-// module.exports.search({q: 'oko'}, function(err, response) {
-// 	console.log(response);
-// });
+module.exports.getData(d, function(err, response) {
+	console.log(response);
+});
