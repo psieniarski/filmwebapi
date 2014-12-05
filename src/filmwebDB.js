@@ -1,6 +1,7 @@
 var XMLHttpRequest = require( 'xhr2' );
 var md5 		   = require( 'MD5' );
 var EventEmitter   = require( 'events' ).EventEmitter;
+var util 		   = require('util');
 
 var settings       = require( 'settings' );
 var convert		   = require( 'filmwebConvert' );
