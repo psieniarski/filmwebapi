@@ -80,8 +80,19 @@ module.exports = {
 
 
 var convertData = function(str) {
-	var arr = str.split('\n');
+	var obj   = { items: [] };
+	var arr   = str.split('\n');
+	var films = [];
+	
 	arr.shift(0);
+
+
+	for (var i = arr.length - 1; i >= 0; i--) {
+		var part = (arr[i].split('\\c'));
+		if (part.shift() == 'f') {  // jesli wynik jest filmem
+			films.push(part);
+		}
+	}
 	return arr;
 }
 
