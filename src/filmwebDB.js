@@ -87,7 +87,7 @@ function Winko() {
 }
 
 var x = util.inherits(Winko, EventEmitter);
-console.log( x );
+console.log( EventEmitter );
 
 // var convertData = function(str) {
 // 	var obj   = { items: [] };
