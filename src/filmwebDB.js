@@ -19,7 +19,7 @@ module.exports = {
 				if ( prop == 'getFilmInfoFull' ) {
 					for ( var i = obj[prop].length - 1; i >= 0; i-- ) { 
 						methods.push( prop + ' ' + brackets( obj[prop][i] ) + '\\n' );
-					};
+					}
 				} else {
 					methods.push( prop + ' ' + JSON.stringify( obj[prop] ) + '\\n' );			
 				}
