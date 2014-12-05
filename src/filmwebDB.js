@@ -89,6 +89,8 @@ FilmwebDB.prototype.constructor = FilmwebDB;
 
 util.inherits(FilmwebDB, EventEmitter);
 
+console.log(FilmwebDB)
+
 
 // var convertData = function(str) {
 // 	var obj   = { items: [] };
