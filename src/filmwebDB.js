@@ -85,6 +85,7 @@ FilmwebDB.__proto__ = {
 	}
 };
 
+console.log(FilmwebDB);
 FilmwebDB.prototype.constructor = FilmwebDB;
 
 util.inherits(FilmwebDB, EventEmitter);
