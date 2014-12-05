@@ -1,9 +1,16 @@
 var XMLHttpRequest = require('xhr2');
+var md5 		   = require('MD5');
 
 var settings       = require('settings');
 var convert		   = require('filmwebConvert');
 
 module.exports = {
+
+	_createSigniature: function() {
+		var hash = md5(method + settings.appId + settings.apiKey);
+		return settings.version + ',' + hash;
+	},
+
 	ajax: function( type, data, callback ) {
 		var xhr;
 
