@@ -3,35 +3,34 @@ var md5 		   = require( 'MD5' );
 var EventEmitter   = require( 'events' ).EventEmitter;
 var util 		   = require('util');
 
-
-var filmweb 	   = require( 'filmweb ');
 var settings       = require( 'settings' );
-// var convert		   = require( 'filmwebConvert' );
-// var format		   = require( 'filmwebFormat' );
+var convert		   = require( 'filmwebConvert' );
+var format		   = require( 'filmwebFormat' );
 
-filmweb.DB = function() {};
+function FilmwebDB(){}; 
+console.log(FilmwebDB.prototype)
 
-filmweb.DB.prototype._createSignature: function( method ) {
-	var hash = md5( method + settings.appId + settings.apiKey );
-	return settings.version + ',' + hash;
-};
+FilmwebDB.prototype._createSignature: function( method ) {
+		var hash = md5( method + settings.appId + settings.apiKey );
+		return settings.version + ',' + hash;
+	},
 
-filmweb.DB._prepareMethods: function( obj ) {
-	var methods = [];
+	_prepareMethods: function( obj ) {
+		var methods = [];
 
-	for ( var prop in obj ) {
-		if ( obj.hasOwnProperty( prop ) ) {
-			if ( prop == 'getFilmInfoFull' ) {
-				for ( var i = obj[prop].length - 1; i >= 0; i-- ) { 
-					methods.push( prop + ' ' + format.brackets( obj[prop][i] ) + '\\n' );
+		for ( var prop in obj ) {
+			if ( obj.hasOwnProperty( prop ) ) {
+				if ( prop == 'getFilmInfoFull' ) {
+					for ( var i = obj[prop].length - 1; i >= 0; i-- ) { 
+						methods.push( prop + ' ' + format.brackets( obj[prop][i] ) + '\\n' );
+					}
+				} else {
+					methods.push( prop + ' ' + JSON.stringify( obj[prop] ) + '\\n' );			
 				}
-			} else {
-				methods.push( prop + ' ' + JSON.stringify( obj[prop] ) + '\\n' );			
 			}
 		}
-	}
-	return methods.join( '' );
-},
+		return methods.join( '' );
+	},
 
 	ajax: function( type, data, callback ) {
 		var xhr;
