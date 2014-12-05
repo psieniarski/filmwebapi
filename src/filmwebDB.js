@@ -84,7 +84,7 @@ var convertData = function(str) {
 	var arr   = str.split('\n');
 	var films = [];
 
-	arr.shift(0);
+	
 
 
 	for (var i = arr.length - 1; i >= 0; i--) {
