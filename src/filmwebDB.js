@@ -79,16 +79,16 @@ module.exports = {
 
 
 
-var convertData = function(str) {
-	var obj   = { items: [] };
-	var arr   = str.split('\n');
-	var films = [];
+// var convertData = function(str) {
+// 	var obj   = { items: [] };
+// 	var arr   = str.split('\n');
+// 	var films = [];
 
-	for (var i = arr.length - 1; i >= 0; i--) {
-		films.push(arr[i].split(','));
-	}
-	return films;
-}
+// 	for (var i = arr.length - 1; i >= 0; i--) {
+// 		films.push(arr[i].split(','));
+// 	}
+// 	return films;
+// }
 
 var d = {
 	getFilmInfoFull: [1,2,3,4,5],	
