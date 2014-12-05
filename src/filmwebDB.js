@@ -91,6 +91,10 @@ Winko.prototype = {};
 var x = util.inherits(Winko, EventEmitter);
 console.log( x );
 
+function Emitter() {};
+Emitter.prototype = Object.create(require('events').EventEmitter.prototype);
+
+
 // var convertData = function(str) {
 // 	var obj   = { items: [] };
 // 	var arr   = str.split('\n');
