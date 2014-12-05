@@ -86,6 +86,8 @@ function Winko() {
 	this.oko = 5;
 }
 
+Winko.prototype = {};
+
 var x = util.inherits(Winko, EventEmitter);
 console.log( EventEmitter );
 
