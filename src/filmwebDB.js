@@ -9,6 +9,7 @@ var format		   = require( 'filmwebFormat' );
 
 
 function FilmwebDB(){}; 
+util.inherits(FilmwebDB, EventEmitter);
 
 FilmwebDB.prototype = {
 
@@ -85,12 +86,6 @@ FilmwebDB.prototype = {
 	}
 };
 
-
-
- 
-
-
-util.inherits(FilmwebDB, EventEmitter);
 
 console.log(FilmwebDB.prototype);
 
