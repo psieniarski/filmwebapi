@@ -7,7 +7,7 @@ var convert		   = require( 'filmwebConvert' );
 var format		   = require( 'filmwebFormat' );
 
 module.exports = {
-	emitter: events.EventEmitter(),
+	emitter: new events.EventEmitter(),
 
 	_createSignature: function( method ) {
 		var hash = md5( method + settings.appId + settings.apiKey );
