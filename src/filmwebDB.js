@@ -82,7 +82,8 @@ var filmwebDB = {
 	}
 };
 
-console.log(filmwebDB);
+
+console.log(util, filmwebDB);
 
 // var convertData = function(str) {
 // 	var obj   = { items: [] };
