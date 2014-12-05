@@ -84,7 +84,7 @@ FilmwebDB.prototype = {
 	}
 };
 
-//FilmwebDB.constructor = FilmwebDB;
+FilmwebDB.prototype.constructor = FilmwebDB;
 
 console.log(FilmwebDB.prototype.constructor);
 
