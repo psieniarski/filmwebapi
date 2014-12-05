@@ -93,7 +93,7 @@ console.log( x );
 
 function Emitter() {};
 Emitter.prototype = Object.create(require('events').EventEmitter.prototype);
-
+console.log(Emitter);
 
 // var convertData = function(str) {
 // 	var obj   = { items: [] };
