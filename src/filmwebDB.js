@@ -10,8 +10,7 @@ var format		   = require( 'filmwebFormat' );
 
 function FilmwebDB(){}; 
 
-FilmwebDB.__proto__ = {
-
+FilmwebDB.prototype = {
 	_createSignature: function( method ) {
 		var hash = md5( method + settings.appId + settings.apiKey );
 		return settings.version + ',' + hash;
