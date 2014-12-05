@@ -45,7 +45,7 @@ module.exports = {
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
 		    		callback( null, xhr );
-		    		this.emitter.emmit('oko');
+		    		this.emitter.emmit('oko', xhr);
 
 		    	} else {
 		    		callback( new Error( xhr.status ) );			
