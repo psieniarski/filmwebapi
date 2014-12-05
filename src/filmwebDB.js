@@ -88,10 +88,7 @@ var convertData = function(str) {
 
 
 	for (var i = arr.length - 1; i >= 0; i--) {
-		var part = (arr[i].split('\\c'));
-		if (part.shift() == 'f') {  // jesli wynik jest filmem
-			films.push(part);
-		}
+		films.push(arr[i]);
 	}
 	return films;
 }
