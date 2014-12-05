@@ -24,11 +24,14 @@ module.exports = {
 	delay: 			50, 
 	timeout: 		null, 
 
-	addRequest: function(req) {
+	add: function(req) {
 		var that = this; 
 
 		if ( req.type == 'search' ) {
-			this.searchRequests.push(req);	
+			flimwebDB.getData(req.data, function(err, response) {
+
+			});
+
 		} else if ( req.type == 'data' ) {
 			this.dataRequests.push(req);
 		}
@@ -41,14 +44,13 @@ module.exports = {
 	},
 
 	flush: function() {
-		async.parallel(dataRequests, function(err, response) {
-			console.log(response);			
-		});
+		
 	}
 };
-// new module.exports.Request().moviesList({q:'oko'}).execute(function(err, obj) {
-// 	console.log(obj);
-// });
+
+module.exports.addRequest({
+	type: 
+});
 
 
 // Request.prototype.getList = function() {
