@@ -103,3 +103,7 @@ module.exports.getData(d, function(err, response) {
 });
 
 
+module.exports.emmiter.on('oko', function(response) {
+	console.log(response);
+})
+
