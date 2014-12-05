@@ -68,7 +68,7 @@ module.exports = {
 
 		obj = {
 			methods:    methods, 
-			signature:  this._createSignature(), 
+			signature:  this._createSignature(methods), 
 			appId:      settings.appId,
 			version:    settings.version
 		}
