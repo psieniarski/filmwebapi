@@ -91,7 +91,6 @@ Winko.prototype = {};
 var x = util.inherits(Winko, EventEmitter);
 console.log( x );
 
-function Emitter() 
 Emitter.prototype = Object.create(require('events').EventEmitter.prototype);
 
 
