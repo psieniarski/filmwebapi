@@ -86,7 +86,7 @@ function Winko() {
 	this.oko = 5;
 }
 
-var x = util.inherits(Winko, EventEmitter)
+var x = util.inherits(Winko, EventEmitter);
 console.log( x );
 
 // var convertData = function(str) {
