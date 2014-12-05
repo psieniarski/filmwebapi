@@ -83,7 +83,7 @@ var convertData = function(str) {
 	var obj   = { items: [] };
 	var arr   = str.split('\n');
 	var films = [];
-	
+
 	arr.shift(0);
 
 
@@ -93,7 +93,7 @@ var convertData = function(str) {
 			films.push(part);
 		}
 	}
-	return arr;
+	return films;
 }
 
 var d = {
