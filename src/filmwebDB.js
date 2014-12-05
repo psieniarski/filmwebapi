@@ -88,7 +88,7 @@ var d = {
 }
 
 module.exports.getData(d, function(err, response) {
-	console.log(response.responseText);
+	console.log( convertData( response.responseText) );
 });
 
 
