@@ -49,16 +49,6 @@ module.exports = {
 		    }
 		};
 
-		if (type == 'data') {
-			data = {
-				methods:    this._prepareMethods(data), 
-				signature:  this._createSignature(), 
-				appId:      settings.appId,
-				version:    settings.version
-			}
-			console.log(data)
-		}
-
 		xhr.open( 'GET', settings.urls[type] + convert.obj2url(data), true ); 
 		xhr.send();	
 	},
@@ -74,6 +64,15 @@ module.exports = {
 	},
 
 	getData: function( obj, callback ) {
+		var methods = this._prepareMethods(data); 
+
+		obj = {
+			methods:    methods, 
+			signature:  this._createSignature(), 
+			appId:      settings.appId,
+			version:    settings.version
+		}
+
 		this.ajax( 'data', obj, callback ); 
 	}
 };
