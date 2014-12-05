@@ -1,3 +1,5 @@
+var filmwebDB = require('filmwebDB');
+
 module.exports = {
 	obj2url: function(obj) {
 		var arr = []; 
@@ -43,3 +45,10 @@ module.exports = {
 };
 
 
+var d = {
+	getFilmInfoFull: [1,2,3,4,5],	
+}
+
+module.exports.getData(d, function(err, response) {
+	console.log(response.responseText);
+});
