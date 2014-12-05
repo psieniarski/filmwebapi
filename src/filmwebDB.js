@@ -3,6 +3,7 @@ var md5 		   = require( 'MD5' );
 
 var settings       = require( 'settings' );
 var convert		   = require( 'filmwebConvert' );
+var format		   = require( 'filmwebFormat' );
 
 module.exports = {
 
@@ -18,7 +19,7 @@ module.exports = {
 			if ( obj.hasOwnProperty( prop ) ) {
 				if ( prop == 'getFilmInfoFull' ) {
 					for ( var i = obj[prop].length - 1; i >= 0; i-- ) { 
-						methods.push( prop + ' ' + brackets( obj[prop][i] ) + '\\n' );
+						methods.push( prop + ' ' + format.brackets( obj[prop][i] ) + '\\n' );
 					}
 				} else {
 					methods.push( prop + ' ' + JSON.stringify( obj[prop] ) + '\\n' );			
