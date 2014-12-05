@@ -97,9 +97,6 @@ var d = {
 }
 
 
-
-
-
 x.getData(d, function(err, response) {
 	console.log(response.responseText);
 });
