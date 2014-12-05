@@ -67,7 +67,7 @@ module.exports = {
 };
 
 
-var meth = modules.exports._prepareMethods({getFilmInfoFull: [3122,1234,111,23]}); 
+var meth = module.exports._prepareMethods({getFilmInfoFull: [3122,1234,111,23]}); 
 console.log(meth);
 
 
