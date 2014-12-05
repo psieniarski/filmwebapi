@@ -9,6 +9,7 @@
     "grunt-browserify": "~3.2.1",
     "underscore": "~1.7.0",
     "intern": "~2.1.1",
-    "grunt-contrib-symlink": "~0.3.0"
+    "grunt-contrib-symlink": "~0.3.0",
+    "async": "~0.9.0"
   }
 }

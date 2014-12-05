@@ -1,7 +1,9 @@
 var settings  = require('settings');
 var format	  = require('filmwebFormat');
-
 var filmwebDB = require('filmwebDB');
+
+var async     = require('async');
+
 
 module.exports = {
 	// Request: function() {
@@ -39,7 +41,9 @@ module.exports = {
 	},
 
 	flush: function() {
-			
+		async.parallel(dataRequests, function(err, response) {
+			console.log(response);			
+		});
 	}
 
 
