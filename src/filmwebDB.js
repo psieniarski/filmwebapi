@@ -91,7 +91,7 @@ FilmwebDB.prototype.constructor = FilmwebDB;
 util.inherits(FilmwebDB, EventEmitter);
 
 var x = new FilmwebDB(); 
-console.log(x.on);
+
 
 var d = {
 	getFilmInfoFull: [1,2,3,4,5],	
