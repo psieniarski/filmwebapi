@@ -31,7 +31,6 @@ module.exports = {
 			this.dataRequests.push(req);
 		}
 		 	
-				
 		if (!this.timeout) {
 			setTimeout(function() {
 				that.flush();
@@ -40,7 +39,7 @@ module.exports = {
 	},
 
 	flush: function() {
-
+			
 	}
 
 
