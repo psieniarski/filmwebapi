@@ -82,8 +82,8 @@ var filmwebDB = {
 	}
 };
 
-
-console.log(util.inherits, filmwebDB);
+util.inherits(filmwebDB, EventEmitter)
+console.log( );
 
 // var convertData = function(str) {
 // 	var obj   = { items: [] };
