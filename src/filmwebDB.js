@@ -100,9 +100,7 @@ x.getData(d, function(err, response) {
 });
 
 
-module.exports.emitter.on('oko', function(response) {
-	console.log(response);
-})
+
 
 
 
