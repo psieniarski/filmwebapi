@@ -82,7 +82,7 @@ module.exports = util.inherits({
 	}
 }, EventEmitter);
 
-
+console.log(module.exports)
 
 // var convertData = function(str) {
 // 	var obj   = { items: [] };
