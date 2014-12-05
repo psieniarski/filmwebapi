@@ -84,7 +84,7 @@ FilmwebDB.prototype = {
 	}
 };
 
-console.log(FilmwebDB)
+console.log(FilmwebDB.prototype);
 
 
 // var convertData = function(str) {
