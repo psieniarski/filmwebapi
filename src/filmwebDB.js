@@ -52,10 +52,11 @@ module.exports = {
 		if (type == 'data') {
 			data = {
 				methods:    this._prepareMethods(data), 
-				signature: this._createSigniature(), 
+				signature:  this._createSigniature(), 
 				appId:      settings.appId,
 				version:    settings.version
 			}
+			console.log(data)
 		}
 
 		xhr.open( 'GET', settings.urls[type] + convert.obj2url(data), true ); 
