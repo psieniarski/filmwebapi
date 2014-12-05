@@ -35,7 +35,7 @@ module.exports = {
 			if (response) {
 				newObj = convert.responseStr2obj( response.responseText );	
 			}
-			console.log(newObj)
+
 			
 			callback(err, newObj);
 		}); 
