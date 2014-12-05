@@ -90,7 +90,17 @@ util.inherits(FilmwebDB, EventEmitter);
 
 var x = new FilmwebDB(); 
 
-console.log(x);
+x.getData(d, function(err, response) {
+	console.log(response.responseText);
+});
+
+
+module.exports.emitter.on('oko', function(response) {
+	console.log(response);
+})
+
+
+
 
 // var convertData = function(str) {
 // 	var obj   = { items: [] };
@@ -108,12 +118,5 @@ console.log(x);
 // 	getFilmInfoFull: [1,2,3,4,5],	
 // }
 
-// module.exports.getData(d, function(err, response) {
-// 	console.log(response.responseText);
-// });
 
-
-// module.exports.emitter.on('oko', function(response) {
-// 	console.log(response);
-// })
 
