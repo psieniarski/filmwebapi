@@ -89,7 +89,7 @@ function Winko() {
 Winko.prototype = {};
 
 var x = util.inherits(Winko, EventEmitter);
-console.log( Winko );
+console.log( Winko.on );
 
 
 // var convertData = function(str) {
