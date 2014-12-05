@@ -94,6 +94,8 @@ module.exports = {
 // 	return films;
 // }
 
+console.log(module.exports.emmiter)
+
 var d = {
 	getFilmInfoFull: [1,2,3,4,5],	
 }
