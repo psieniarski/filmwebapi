@@ -64,7 +64,7 @@ module.exports = {
 	},
 
 	getData: function( obj, callback ) {
-		var methods = this._prepareMethods(data); 
+		var methods = this._prepareMethods(obj); 
 
 		obj = {
 			methods:    methods, 
