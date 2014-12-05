@@ -33,9 +33,10 @@ module.exports = {
 		}
 			
 		*/
-		_Request: function(data) {
-			this.data = data;
-			
+		_Request: function(type, data, callback) {
+			this.type     = type; 
+			this.data 	  = data;
+			this.callback = callback;
 		},
 
 		list: function(obj) {
