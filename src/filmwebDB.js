@@ -1,13 +1,13 @@
 var XMLHttpRequest = require( 'xhr2' );
 var md5 		   = require( 'MD5' );
-var events         = require( 'events' );
-var utils          = require( 'utils' );
+var EventEmitter   = require( 'events' ).EventEmitter;
+
 var settings       = require( 'settings' );
 var convert		   = require( 'filmwebConvert' );
 var format		   = require( 'filmwebFormat' );
 
 module.exports = util.inherits({
-	
+
 	_createSignature: function( method ) {
 		var hash = md5( method + settings.appId + settings.apiKey );
 		return settings.version + ',' + hash;
