@@ -3,7 +3,7 @@ var format	  = require('filmwebFormat');
 
 var filmwebDB = require('filmwebDB');
 
-module.exports = {
+var Proxy = function( ) {
 	// Request: function() {
 	// 	var obj = {};
 
@@ -17,10 +17,12 @@ module.exports = {
 	// 	};
 	// }
 
-	addRequest: function(req) {
-		console.log(req);
+	this.requests = []; 
+
+	this.addRequest: function(req) {
+		this.requests.push(); 
 	}
-};
+
 
 // new module.exports.Request().moviesList({q:'oko'}).execute(function(err, obj) {
 // 	console.log(obj);
