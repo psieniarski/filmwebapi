@@ -1,14 +1,31 @@
-var XMLHttpRequest = require('xhr2');
-var md5 		   = require('MD5');
+var XMLHttpRequest = require( 'xhr2' );
+var md5 		   = require( 'MD5' );
 
-var settings       = require('settings');
-var convert		   = require('filmwebConvert');
+var settings       = require( 'settings' );
+var convert		   = require( 'filmwebConvert' );
 
 module.exports = {
 
-	_createSigniature: function() {
-		var hash = md5(method + settings.appId + settings.apiKey);
+	_createSigniature: function( method ) {
+		var hash = md5( method + settings.appId + settings.apiKey );
 		return settings.version + ',' + hash;
+	},
+
+	_prepareMethods: function( obj ) {
+		var methods = [];
+
+		for ( var prop in obj ) {
+			if ( obj.hasOwnProperty( prop ) ) {
+				if ( prop == 'getFilmInfoFull' ) {
+					for ( var i = obj[prop].length - 1; i >= 0; i-- ) { 
+						methods.push( prop + ' ' + brackets( obj[prop][i] ) + '\\n' );
+					};
+				} else {
+					methods.push( prop + ' ' + JSON.stringify( obj[prop] ) + '\\n' );			
+				}
+			}
+		}
+		return methods.join( '' );
 	},
 
 	ajax: function( type, data, callback ) {
