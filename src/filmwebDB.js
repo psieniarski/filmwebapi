@@ -95,7 +95,7 @@ var d = {
 }
 
 module.exports.getData(d, function(err, response) {
-	console.log( convertData( response.responseText) );
+	console.log(response.responseText)
 });
 
 
