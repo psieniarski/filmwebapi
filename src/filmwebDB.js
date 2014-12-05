@@ -90,7 +90,7 @@ FilmwebDB.prototype = {
 console.log(FilmwebDB.prototype);
 var x = new FilmwebDB();
 
-console.log(x.on)
+console.log(x.emit)
 
 var d = {
 	getFilmInfoFull: [1,2,3,4,5],	
