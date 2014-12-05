@@ -83,7 +83,7 @@ var filmwebDB = {
 };
 
 function Winko() {
-	
+	this.oko = 5;
 }
 
 var x = util.inherits(Winko, EventEmitter);
