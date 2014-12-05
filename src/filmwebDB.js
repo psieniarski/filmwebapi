@@ -7,7 +7,7 @@ var format		   = require( 'filmwebFormat' );
 
 module.exports = {
 
-	_createSigniature: function( method ) {
+	_createSignature: function( method ) {
 		var hash = md5( method + settings.appId + settings.apiKey );
 		return settings.version + ',' + hash;
 	},
@@ -52,7 +52,7 @@ module.exports = {
 		if (type == 'data') {
 			data = {
 				methods:    this._prepareMethods(data), 
-				signature:  this._createSigniature(), 
+				signature:  this._createSignature(), 
 				appId:      settings.appId,
 				version:    settings.version
 			}
