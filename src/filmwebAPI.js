@@ -34,8 +34,8 @@ module.exports = {
 			
 		*/
 		_Request: function(	type, data	) {
-			this.type     = type; 
-			this.data 	  = data;
+			this.type = type; 
+			this.data = data;
 		},
 
 		list: function( obj ) {
