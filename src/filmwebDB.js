@@ -11,6 +11,7 @@ var format		   = require( 'filmwebFormat' );
 function FilmwebDB(){}; 
 
 FilmwebDB.prototype = {
+
 	_createSignature: function( method ) {
 		var hash = md5( method + settings.appId + settings.apiKey );
 		return settings.version + ',' + hash;
@@ -86,10 +87,12 @@ FilmwebDB.prototype = {
 
 FilmwebDB.prototype.constructor = FilmwebDB;
 
-util.inherits(FilmwebDB, EventEmitter);
-
 var x = new FilmwebDB(); 
 console.log(x)
+
+util.inherits(FilmwebDB, EventEmitter);
+
+
 
 var d = {
 	getFilmInfoFull: [1,2,3,4,5],	
