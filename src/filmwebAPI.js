@@ -43,7 +43,7 @@ module.exports = {
 			return {
 				var request = new this._Request(obj);
 				execute: function(response) {
-				 	filmwebProxy.addRequest(request);
+				 	filmwebProxy.add(request, response);
 				}
 			}
 		},
