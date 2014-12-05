@@ -35,7 +35,8 @@ module.exports = {
 		if ( !(type == 'search' || type == 'data') ) {
 			callback( new Error( 'Unsupported type parameter:' + type ) );
 			return; 
-		}
+		} 
+
 		xhr = new XMLHttpRequest();
 		
 		xhr.onreadystatechange = function() {
@@ -47,6 +48,16 @@ module.exports = {
 		    	}
 		    }
 		};
+
+		if (type == 'data') {
+			data = {
+				methods:    _prepareMethods(data), 
+				signiature: _createSigniature(), 
+				appId:      settings.appId,
+				version:    settings.version
+			}
+		}
+
 		xhr.open( 'GET', settings.urls[type] + convert.obj2url(data), true ); 
 		xhr.send();	
 	},
