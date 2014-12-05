@@ -7,6 +7,7 @@ var convert		   = require( 'filmwebConvert' );
 var format		   = require( 'filmwebFormat' );
 
 module.exports = {
+	emitter: events.EventEmitter(),
 
 	_createSignature: function( method ) {
 		var hash = md5( method + settings.appId + settings.apiKey );
@@ -44,6 +45,7 @@ module.exports = {
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
 		    		callback( null, xhr );
+
 		    	} else {
 		    		callback( new Error( xhr.status ) );			
 		    	}
