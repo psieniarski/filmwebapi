@@ -92,7 +92,7 @@ FilmwebDB.prototype = {
 
 util.inherits(FilmwebDB, EventEmitter);
 
-console.log(FilmwebDB.super_);
+console.log(FilmwebDB);
 
 
 var d = {
