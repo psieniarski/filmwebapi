@@ -51,8 +51,8 @@ module.exports = {
 
 		if (type == 'data') {
 			data = {
-				methods:    _prepareMethods(data), 
-				signiature: _createSigniature(), 
+				methods:    this._prepareMethods(data), 
+				signiature: this._createSigniature(), 
 				appId:      settings.appId,
 				version:    settings.version
 			}
