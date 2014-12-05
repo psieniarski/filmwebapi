@@ -1,6 +1,5 @@
 var XMLHttpRequest = require( 'xhr2' );
 var md5 		   = require( 'MD5' );
-var EventEmitter   = require( 'events' ).EventEmitter;
 var util 		   = require('util');
 
 var settings       = require( 'settings' );
@@ -88,8 +87,8 @@ function Winko() {
 
 Winko.prototype = {};
 
-var x = util.inherits(Winko, EventEmitter);
-console.log( x );
+util.inherits(Winko, EventEmitter);
+console.log( Winko );
 
 function Emitter() {};
 Emitter.prototype = Object.create(require('events').EventEmitter.prototype);
