@@ -3,13 +3,15 @@ var md5 		   = require( 'MD5' );
 var EventEmitter   = require( 'events' ).EventEmitter;
 var util 		   = require('util');
 
+
+var filmweb 	   = require( 'filmweb ');
 var settings       = require( 'settings' );
-var convert		   = require( 'filmwebConvert' );
-var format		   = require( 'filmwebFormat' );
+// var convert		   = require( 'filmwebConvert' );
+// var format		   = require( 'filmwebFormat' );
 
-var filmwebDB = {
+var filmwebDB = function() {}; 
 
-	_createSignature: function( method ) {
+filmweb.db.prototype._createSignature: function( method ) {
 		var hash = md5( method + settings.appId + settings.apiKey );
 		return settings.version + ',' + hash;
 	},
@@ -88,8 +90,8 @@ function Winko() {
 
 Winko.prototype = {};
 
-var x = util.inherits(filmwebDB, EventEmitter);
-console.log(filmwebDB.on)
+var x = util.inherits(Winko, EventEmitter);
+console.log( new Winko().on );
 
 
 // var convertData = function(str) {
