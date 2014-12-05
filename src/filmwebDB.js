@@ -90,7 +90,7 @@ util.inherits(FilmwebDB, EventEmitter);
 
 var x = new FilmwebDB(); 
 
-console.log(x)
+console.log(x);
 
 // var convertData = function(str) {
 // 	var obj   = { items: [] };
