@@ -89,7 +89,7 @@ function Winko() {
 Winko.prototype = {};
 
 var x = util.inherits(filmwebDB, EventEmitter);
-console.log(filmwebDB)
+console.log(filmwebDB.on)
 
 
 // var convertData = function(str) {
