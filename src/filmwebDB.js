@@ -96,16 +96,16 @@ console.log(module.exports)
 // }
 
 
-var d = {
-	getFilmInfoFull: [1,2,3,4,5],	
-}
+// var d = {
+// 	getFilmInfoFull: [1,2,3,4,5],	
+// }
 
-module.exports.getData(d, function(err, response) {
-	console.log(response.responseText);
-});
+// module.exports.getData(d, function(err, response) {
+// 	console.log(response.responseText);
+// });
 
 
-module.exports.emitter.on('oko', function(response) {
-	console.log(response);
-})
+// module.exports.emitter.on('oko', function(response) {
+// 	console.log(response);
+// })
 
