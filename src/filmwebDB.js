@@ -94,7 +94,6 @@ module.exports = {
 // 	return films;
 // }
 
-console.log(module.exports.emitter)
 
 var d = {
 	getFilmInfoFull: [1,2,3,4,5],	
@@ -105,7 +104,7 @@ module.exports.getData(d, function(err, response) {
 });
 
 
-module.exports.emmiter.on('oko', function(response) {
+module.exports.emitter.on('oko', function(response) {
 	console.log(response);
 })
 
