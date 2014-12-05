@@ -88,10 +88,10 @@ FilmwebDB.prototype = {
 
 
 var x = new FilmwebDB(); 
-console.log(x)
+
 
 util.inherits(FilmwebDB, EventEmitter);
-
+console.log(x)
 
 
 var d = {
