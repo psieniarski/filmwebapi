@@ -52,7 +52,7 @@ module.exports = {
 		if (type == 'data') {
 			data = {
 				methods:    this._prepareMethods(data), 
-				signature:  this._createSignature(this._prepareMethods(data)), 
+				signature:  this._createSignature(), 
 				appId:      settings.appId,
 				version:    settings.version
 			}
