@@ -80,7 +80,7 @@ module.exports = {
 
 		this.ajax( 'data', obj, callback ); 
 	}
-}, EventEmitter);
+};
 
 console.log(module.exports)
 
