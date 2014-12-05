@@ -33,17 +33,16 @@ module.exports = {
 		}
 			
 		*/
-		_Request: function(type, data, callback) {
+		_Request: function(	type, data	) {
 			this.type     = type; 
 			this.data 	  = data;
-			this.callback = callback;
 		},
 
-		list: function(obj) {
+		list: function( obj ) {
 			return {
-				var request = new this._Request(obj);
-				execute: function(response) {
-				 	filmwebProxy.add(request, response);
+				var request = new this._Request( obj );
+				execute: function( response ) {
+				 	filmwebProxy.add( request, response );
 				}
 			}
 		},
