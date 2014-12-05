@@ -35,7 +35,6 @@ module.exports = {
 			callback( new Error( 'Unsupported type parameter:' + type ) );
 			return; 
 		}
-
 		xhr = new XMLHttpRequest();
 		
 		xhr.onreadystatechange = function() {
@@ -47,18 +46,16 @@ module.exports = {
 		    	}
 		    }
 		};
-
 		xhr.open( 'GET', settings.urls[type] + convert.obj2url(data), true ); 
 		xhr.send();	
 	},
 
 	search: function( obj, callback ) {
 		this.ajax( 'search', obj, function(err, response) { 
-	
+
 			if (response) {
 				response = convert.responseStr2obj( response.responseText );	
 			}
-		
 			callback(err, response);
 		}); 
 	},
