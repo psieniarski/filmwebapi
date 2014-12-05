@@ -8,9 +8,10 @@ var convert		   = require( 'filmwebConvert' );
 var format		   = require( 'filmwebFormat' );
 
 function FilmwebDB(){}; 
-console.log(FilmwebDB.prototype)
 
-FilmwebDB.prototype._createSignature: function( method ) {
+FilmwebDB.prototype = {
+
+	_createSignature: function( method ) {
 		var hash = md5( method + settings.appId + settings.apiKey );
 		return settings.version + ',' + hash;
 	},
@@ -83,14 +84,7 @@ FilmwebDB.prototype._createSignature: function( method ) {
 	}
 };
 
-function Winko() {
-	this.oko = 5;
-}
-
-Winko.prototype = {};
-
-var x = util.inherits(Winko, EventEmitter);
-console.log( new Winko().on );
+console.log(FilmwebDB)
 
 
 // var convertData = function(str) {
