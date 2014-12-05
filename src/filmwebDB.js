@@ -79,6 +79,10 @@ module.exports = {
 
 
 
+var convertData = function(str) {
+	var result = str.split('\\a');
+}
+
 var d = {
 	getFilmInfoFull: [1,2,3,4,5],	
 }
@@ -86,3 +90,5 @@ var d = {
 module.exports.getData(d, function(err, response) {
 	console.log(response.responseText);
 });
+
+
