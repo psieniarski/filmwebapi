@@ -3,7 +3,7 @@ var format	  = require('filmwebFormat');
 
 var filmwebDB = require('filmwebDB');
 
-var Proxy = function( ) {
+module.exports = {
 	// Request: function() {
 	// 	var obj = {};
 
@@ -17,10 +17,28 @@ var Proxy = function( ) {
 	// 	};
 	// }
 
-	this.requests = []; 
+	dataRequests:   [],
+	searchRequests: [], 
+	delay: 			50, 
+	timeout: 		null, 
 
-	this.addRequest: function(req) {
-		this.requests.push(); 
+	addRequest: function(req) {
+		var that = this; 
+
+		if ( req.type == 'search' ) {
+			this.requests.push(req);	
+		} else if (req.type)
+		 	
+				
+		if (!this.timeout) {
+			setTimeout(function() {
+				that.flush();
+			}, this.delay);
+		}
+	},
+
+	flush: function() {
+
 	}
 
 
