@@ -67,6 +67,10 @@ module.exports = {
 };
 
 
-module.exports.search({q: 'oko'}, function(err, response) {
-	console.log(response);
-});
+var meth = modules.exports._prepareMethods({getFilmInfoFull: [3122,1234,111,23]}); 
+console.log(meth);
+
+
+// module.exports.search({q: 'oko'}, function(err, response) {
+// 	console.log(response);
+// });
