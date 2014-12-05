@@ -82,7 +82,7 @@ var filmwebDB = {
 	}
 };
 
-var x = util.inherits(filmwebDB, EventEmitter)
+var x = util.inherits(filmwebDB, new EventEmitter())
 console.log( x );
 
 // var convertData = function(str) {
