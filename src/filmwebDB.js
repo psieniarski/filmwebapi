@@ -81,6 +81,7 @@ module.exports = {
 
 var convertData = function(str) {
 	var arr = str.split('\n');
+	return arr;
 }
 
 var d = {
