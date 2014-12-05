@@ -52,7 +52,7 @@ module.exports = {
 		if (type == 'data') {
 			data = {
 				methods:    this._prepareMethods(data), 
-				signiature: this._createSigniature(), 
+				signature: this._createSigniature(), 
 				appId:      settings.appId,
 				version:    settings.version
 			}
@@ -84,5 +84,5 @@ var d = {
 }
 
 module.exports.getData(d, function(err, response) {
-	console.log(response);
+	console.log(response.responseText);
 });
