@@ -26,8 +26,10 @@ module.exports = {
 		var that = this; 
 
 		if ( req.type == 'search' ) {
-			this.requests.push(req);	
-		} else if (req.type)
+			this.searchRequests.push(req);	
+		} else if ( req.type == 'data' ) {
+			this.dataRequests.push(req);
+		}
 		 	
 				
 		if (!this.timeout) {
