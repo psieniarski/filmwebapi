@@ -90,7 +90,7 @@ util.inherits(FilmwebDB, EventEmitter);
 
 var x = new FilmwebDB(); 
 
-
+console.log(x.getData);
 
 var d = {
 	getFilmInfoFull: [1,2,3,4,5],	
