@@ -35,6 +35,7 @@ module.exports = {
 		*/
 		_Request: function(data) {
 			this.data = data;
+			
 		},
 
 		list: function(obj) {
