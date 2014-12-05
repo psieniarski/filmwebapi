@@ -7,6 +7,7 @@ var settings       = require( 'settings' );
 var convert		   = require( 'filmwebConvert' );
 var format		   = require( 'filmwebFormat' );
 
+
 function FilmwebDB(){}; 
 
 FilmwebDB.prototype = {
@@ -86,7 +87,7 @@ FilmwebDB.prototype = {
 
 FilmwebDB.prototype.constructor = FilmwebDB;
 
-console.log(new FilmwebDB().getData);
+util.inherences(FilmwebDB, EventEmitter);
 
 
 // var convertData = function(str) {
