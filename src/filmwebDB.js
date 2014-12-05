@@ -86,7 +86,7 @@ FilmwebDB.prototype = {
 
 FilmwebDB.constructor = FilmwebDB;
 
-console.log(FilmwebDB.prototype);
+console.log(FilmwebDB.prototype.constructor);
 
 
 // var convertData = function(str) {
