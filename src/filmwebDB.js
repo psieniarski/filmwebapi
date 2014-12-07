@@ -1,15 +1,14 @@
 var XMLHttpRequest = require( 'xhr2' );
 var md5 		   = require( 'MD5' );
 var util 		   = require( 'util' );
-var EventEmitter   = require( 'events' ).EventEmitter;
+var emitter 	   = require( 'emitter-mixin' );
 
 var settings       = require( 'settings' );
 var convert		   = require( 'filmwebConvert' );
 var format		   = require( 'filmwebFormat' );
 
 
-function FilmwebDB(){}; 
-util.inherits(FilmwebDB, EventEmitter);
+FilmwebDB = function() {};
 
 FilmwebDB.prototype = {
 
@@ -36,6 +35,7 @@ FilmwebDB.prototype = {
 	},
 
 	ajax: function( type, data, callback ) {
+		var that = this;
 		var xhr;
 
 		if ( !(type == 'search' || type == 'data') ) {
@@ -49,8 +49,8 @@ FilmwebDB.prototype = {
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
 		    		callback( null, xhr );
-		    		console.log(this.emitter);
-		    		this.emit('oko', xhr);
+
+		    		that.emit('response', null, xhr);
 
 		    	} else {
 		    		callback( new Error( xhr.status ) );			
@@ -86,21 +86,22 @@ FilmwebDB.prototype = {
 	}
 };
 
+emitter(FilmwebDB.prototype);
 
-console.log(FilmwebDB.prototype);
-var x = new FilmwebDB();
-
-console.log(x.emit)
+x = new FilmwebDB();
 
 var d = {
 	getFilmInfoFull: [1,2,3,4,5],	
 }
 
+x.getData(d, function(err, response) {
 
-// x.getData(d, function(err, response) {
-// 	console.log(response.responseText);
-// });
+});
 
+
+x.on('response', function(err, response) {
+	console.log(response.responseText);
+});
 
 
 
