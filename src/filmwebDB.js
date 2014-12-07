@@ -91,7 +91,7 @@ emitter(FilmwebDB.prototype);
 x = new FilmwebDB();
 
 var d = {
-	getFilmInfoFull: [1,2,3,4,5],	
+	getFilmInfoFull: [19000],	
 }
 
 x.getData(d, function(err, response) {
