@@ -83,7 +83,7 @@ FilmwebDB.prototype = {
 		};
 
 		this.ajax( 'data', obj, function( response ) {
-			response = convert.responseData2obj( response ) 
+			response = convert.responseData2obj( response ); 
 		}); 
 	}
 };
