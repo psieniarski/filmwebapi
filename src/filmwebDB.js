@@ -38,7 +38,7 @@ FilmwebDB.prototype = {
 		var that = this;
 		var xhr;
 
-		if ( !(type == 'search' || type == 'data') ) {
+		if ( !( type == 'search' || type == 'data' ) ) {
 			callback( new Error( 'Unsupported type parameter:' + type ) );
 			return; 
 		} 
