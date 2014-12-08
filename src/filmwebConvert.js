@@ -38,7 +38,7 @@ module.exports = {
 	},
 
 	responseData2obj: function(str) {
-		str.replace(/\st:\d+/g, ',');
+		str = str.replace(/\st:\d+/g, ',');
 		return str;
 	}
 };
