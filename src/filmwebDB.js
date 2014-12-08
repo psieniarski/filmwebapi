@@ -80,7 +80,7 @@ FilmwebDB.prototype = {
 			signature:  this._createSignature(methods), 
 			appId:      settings.appId,
 			version:    settings.version
-		}
+		};
 
 		this.ajax( 'data', obj, callback ); 
 	}
