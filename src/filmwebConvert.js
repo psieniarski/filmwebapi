@@ -39,7 +39,7 @@ module.exports = {
 
 	responseData2obj: function(str) {
 		str = str.replace(/\st:\d+/g, ',');
-		return str;
+		console.log(str)
 	}
 };
 
