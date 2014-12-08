@@ -68,16 +68,16 @@ FilmwebDB.prototype = {
 			if (response) {
 				response = convert.responseStr2obj( response.responseText );	
 			}
-			callback(err, response);
+			callback( err, response );
 		}); 
 	},
 
 	getData: function( obj, callback ) {
-		var methods = this._prepareMethods(obj); 
+		var methods = this._prepareMethods( obj ); 
 
 		obj = {
 			methods:    methods, 
-			signature:  this._createSignature(methods), 
+			signature:  this._createSignature( methods ), 
 			appId:      settings.appId,
 			version:    settings.version
 		};
