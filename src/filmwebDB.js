@@ -84,7 +84,7 @@ FilmwebDB.prototype = {
 
 		this.ajax( 'data', obj, function( response ) {
 
-			callback(null, convert.responseData2obj( response )); 
+			callback( null, convert.responseData2obj(response) ); 
 		
 		}); 
 	}
