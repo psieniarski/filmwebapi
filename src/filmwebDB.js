@@ -82,7 +82,9 @@ FilmwebDB.prototype = {
 			version:    settings.version
 		};
 
-		this.ajax( 'data', obj, callback ); 
+		this.ajax( 'data', obj, function(response) {
+			response = convert.responseStr2obj(response) 
+		}); 
 	}
 };
 
