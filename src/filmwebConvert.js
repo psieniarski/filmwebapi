@@ -1,3 +1,5 @@
+var settings = require( 'settings' );
+
 module.exports = {
 	obj2url: function( obj ) {
 		var arr = []; 
