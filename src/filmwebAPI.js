@@ -4,7 +4,9 @@ var filmwebAPI = function(source) {
 };
 
 filmwebAPI.prototype = {
-
+	movies: {
+		
+	}
 };
 
 
