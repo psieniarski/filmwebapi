@@ -10,18 +10,6 @@ var FilmwebAPI = function() {
 		delete callbacks[timestamp];
 	}); 
 
-	this._uuid = (function() {
-		function s4() {
-		return  Math.floor((1 + Math.random()) * 0x10000)
-		            .toString(16)
-		            .substring(1);
-		}
-		return function() {
-		return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-		       s4() + '-' + s4() + s4() + s4();
-		};
-	})();
-
 	this._request = function( type, obj, callback ) {
 		var timestamp = this._uuid();
 
