@@ -23,7 +23,7 @@ var FilmwebAPI = function() {
 		list: function( obj ) {
 			return {
 				execute: function( callback ) {
-					that._request( 'search', obj, function( response ) {
+					that._request( 'data', obj, function( response ) {
 						callback( response );
 					});
 				}
