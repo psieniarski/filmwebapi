@@ -28,6 +28,7 @@ var FilmwebAPI = function() {
 							}
 						}
 					}; 
+					console.log( ids );
 				}
 			};
 		}
