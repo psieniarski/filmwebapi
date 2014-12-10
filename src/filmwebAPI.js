@@ -9,25 +9,18 @@ var FilmwebAPI = function() {
 		callback( response ); 
 	}); 
 
+	this._request = function( type, callback ) {
+		var timestamp = new Date().getTime();
+
+		that.emit( 'request', 'search', obj, timestamp );
+		callbacks[timestamp] = callback;
+	},
+
 	this.movies = {
 		list: function( obj ) {
 			return {
 				execute: function( callback ) {
-					var timestamp = new Date().getTime();
-					var ids 	  = [];
-					var items;
 
-					that.emit( 'request', 'search', obj, timestamp );
-					callbacks[timestamp] = function( response ) {
-						items = response.items;
-
-						for (var i = 0; i < items.length; i++) {
-						 	ids.push( parseInt( items[i].id ) );
-						};
-
-						console.log( ids );
-						// that.emit( 'request', 'data', obj, timestamp );
-					}; 
 				}
 			};
 		}
