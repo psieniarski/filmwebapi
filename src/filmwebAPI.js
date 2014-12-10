@@ -1,4 +1,6 @@
 var emitter    = require( 'emitter-mixin' );
+var uuid       = require( 'id' ).uuid;
+
 
 var FilmwebAPI = function() {
 	var that 	  = this;
