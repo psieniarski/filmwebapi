@@ -22,7 +22,7 @@ var FilmwebAPI = function() {
 						items = response.items; 
 						for ( prop in items ) {
 							if ( items.hasOwnProperty(prop) ) {
-								console.log(items[prop].id)
+								console.log( items[prop].id );
 							}
 						}
 					}; 
