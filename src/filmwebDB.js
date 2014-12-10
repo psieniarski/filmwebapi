@@ -63,6 +63,7 @@ FilmwebDB.prototype = {
 			this.emit( 'error', new Error( 'Unsupported type parameter:' + type ) );
 			return; 
 		} 
+		
 		xhr = new XMLHttpRequest();
 		xhr.timestamp = timestamp;
 
