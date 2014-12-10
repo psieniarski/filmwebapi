@@ -23,7 +23,7 @@ filmwebAPI.prototype = {
 
 emitter( filmwebAPI.prototype );
 
-module.exports = FilmwebDB; 
+module.exports = FilmwebAPI; 
 
 
 // movies: {
