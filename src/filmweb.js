@@ -7,6 +7,6 @@ var fdb  = new FilmwebDB( fapi );
 fapi.movies.list({ 
 	q: 'oko'
 }).execute(function( response ) {
-	console.log( response )
+	console.log( response );
 })
 
