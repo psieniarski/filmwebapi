@@ -16,7 +16,7 @@ var FilmwebAPI = function() {
 		that.emit( 'request', type, obj, timestamp );
 	};
 
-	var guid = (function() {
+	this._uuid = (function() {
 		function s4() {
 		return  Math.floor((1 + Math.random()) * 0x10000)
 		            .toString(16)
