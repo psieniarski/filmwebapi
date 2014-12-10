@@ -10,6 +10,7 @@ FilmwebAPI.prototype = {
 		list: function( obj ) {
 			return {
 				execute: function( response ) {
+					console.log(that);
 					this.context.emit( 'request', 'search', obj.q );
 					this.context.on( 'response', function( type, response ) {
 						console.log( response );
