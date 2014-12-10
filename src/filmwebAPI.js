@@ -14,7 +14,7 @@ var FilmwebAPI = function() {
 
 		callbacks[timestamp] = callback;
 		that.emit( 'request', type, obj, timestamp );
-	},
+	};
 
 	this.movies = {
 		list: function( obj ) {
