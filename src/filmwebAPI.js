@@ -2,6 +2,7 @@ var emitter = require( 'emitter-mixin' );
 
 
 var filmwebAPI = function( source ) {
+	var that = this; 
 	this.source = source;
 };
 
@@ -10,7 +11,10 @@ filmwebAPI.prototype = {
 		list: function( obj ) {
 			return {
 				execute: function( response ) {
+					that.emit( 'request', 'search', obj.q );
+					this.source.on( 'response', function() {
 
+					}); 
 				}
 			}
 		}
