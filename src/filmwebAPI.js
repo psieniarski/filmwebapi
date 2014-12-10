@@ -22,7 +22,7 @@ var FilmwebAPI = function() {
 					callbacks[timestamp] = function( response ) {
 
 						items = response.items; 
-						for ( prop in items ) {
+						for ( var prop in items ) {
 							if ( items.hasOwnProperty(prop) ) {
 								ids.push( items[prop].id );
 							}
