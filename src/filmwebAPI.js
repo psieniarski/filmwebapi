@@ -1,7 +1,7 @@
 var emitter    = require( 'emitter-mixin' );
 
 
-var filmwebAPI = function( source ) {
+var FilmwebAPI = function( source ) {
 	var that     = this; 
 	this.source  = source;
 };
@@ -22,6 +22,8 @@ filmwebAPI.prototype = {
 };
 
 emitter( filmwebAPI.prototype );
+
+module.exports = FilmwebDB; 
 
 
 // movies: {
