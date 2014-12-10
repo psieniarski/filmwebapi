@@ -24,7 +24,7 @@ FilmwebAPI.prototype = {
 
 emitter( FilmwebAPI.prototype );
 
-console.log(FilmwebAPI.on);
+console.log(new FilmwebAPI.on);
 
 module.exports = FilmwebAPI; 
 
