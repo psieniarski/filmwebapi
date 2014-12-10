@@ -48,6 +48,11 @@ emitter( FilmwebAPI.prototype );
 module.exports = FilmwebAPI; 
 
 
+setTimeout(function() {
+	console.log(test);
+}, 5000)
+
+
 
 // movies: {
 
