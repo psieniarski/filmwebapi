@@ -20,14 +20,12 @@ var FilmwebAPI = function() {
 
 					that.emit( 'request', 'search', obj, timestamp );
 					callbacks[timestamp] = function( response ) {
-
+						
 						items = response.items;
 
 						for (var i = 0; i < items.length; i++) {
 						 	ids.push( items[i].id );
 						 };
-
-						 console.log( ids );
 					}; 
 
 					console.log( ids );
