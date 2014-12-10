@@ -35,7 +35,7 @@ module.exports = {
 			var film = films[i];
 			var item = {
 				id: 		film[0],
-				thumbnails: film[1],
+				thumbnails: settings.urls.img + film[1],
 				title:      film[2],
 				caption:    film[3],
 //				caption2: 	film[4],
