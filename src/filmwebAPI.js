@@ -14,9 +14,9 @@ var FilmwebAPI = function() {
 			return {
 				execute: function( response ) {
 					var timestamp = new Date().getTime();
-					console.log(timestamp);
+
 					that.emit( 'request', 'search', obj, timestamp );
-					callbacks.push( response ); 
+					callbacks[timestamp] = response; 
 				}
 			};
 		}
@@ -24,7 +24,6 @@ var FilmwebAPI = function() {
 };
 
 emitter( FilmwebAPI.prototype );
-
 module.exports = FilmwebAPI; 
 
 
