@@ -2,8 +2,8 @@ var emitter    = require( 'emitter-mixin' );
 
 
 var FilmwebAPI = function() {
-	this.that = this;
-	console.log(this.that);
+	var that = this;
+	console.log(that);
 };
 
 FilmwebAPI.prototype = {
