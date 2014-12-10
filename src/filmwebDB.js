@@ -1,30 +1,41 @@
 var XMLHttpRequest = require( 'xhr2' );
 var md5 		   = require( 'MD5' );
-var util 		   = require( 'util' );
 var emitter 	   = require( 'emitter-mixin' );
+var sys			   = require( 'sys' );
 
-var settings       = require( 'settings' );
 var convert		   = require( 'filmwebConvert' );
 var format		   = require( 'filmwebFormat' );
+var settings       = require( 'settings' );
 
 
-FilmwebDB = function() {};
+FilmwebDB = function( client ) {
+	this.on( 'error', function( err ) {
+		sys.debug(err);
+	});
+
+	this.on('xhr', function( type, xhr ) {
+		var response = convert.str2obj( type, xhr.responseText );
+		this.emit( 'response', type, response );
+	});
+};
 
 FilmwebDB.prototype = {
-
 	_createSignature: function( method ) {
 		var hash = md5( method + settings.appId + settings.apiKey );
 		return settings.version + ',' + hash;
 	},
 
-	_prepareMethods: function( obj ) {
+	_prepareMethods: function( methodName, obj ) {
 		var methods = [];
 
 		for ( var prop in obj ) {
 			if ( obj.hasOwnProperty( prop ) ) {
-				if ( prop == 'getFilmInfoFull' ) {
+				if ( prop.toUpperCase() == 'ID' ) {
+					if ( !Array.isArray(obj[prop]) ) {
+						obj[prop] = [ obj[prop] ];
+					}
 					for ( var i = obj[prop].length - 1; i >= 0; i-- ) { 
-						methods.push( prop + ' ' + format.brackets( obj[prop][i] ) + '\\n' );
+						methods.push( methodName + ' ' + format.brackets( obj[prop][i] ) + '\\n' );
 					}
 				} else {
 					methods.push( prop + ' ' + JSON.stringify( obj[prop] ) + '\\n' );			
@@ -34,46 +45,38 @@ FilmwebDB.prototype = {
 		return methods.join( '' );
 	},
 
-	ajax: function( type, data, callback ) {
+	ajax: function( type, data ) {
 		var that = this;
 		var xhr;
 
 		if ( !( type == 'search' || type == 'data' ) ) {
-			callback( new Error( 'Unsupported type parameter:' + type ) );
+			this.emit( 'error', new Error( 'Unsupported type parameter:' + type ) );
 			return; 
 		} 
-
 		xhr = new XMLHttpRequest();
 		
 		xhr.onreadystatechange = function() {
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
-		    		callback( null, xhr );
-
-		    		that.emit('response', null, xhr);
-
+		    		that.emit('xhr', type, xhr);
 		    	} else {
-		    		callback( new Error( xhr.status ) );			
+		    		that.emit( 'error', new Error( 'Error: ' + xhr.status ) );			
 		    	}
 		    }
 		};
 
-		xhr.open( 'GET', settings.urls[type] + convert.obj2url(data), true ); 
+		xhr.open( 'GET', settings.urls[type] + convert.obj2url(data), true );
+
+		console.log(settings.urls[type] + convert.obj2url(data)); 
 		xhr.send();	
 	},
 
-	search: function( obj, callback ) {
-		this.ajax( 'search', obj, function(err, response) { 
-
-			if (response) {
-				response = convert.responseStr2obj( response.responseText );	
-			}
-			callback( err, response );
-		}); 
+	search: function( obj ) {
+		this.ajax( 'search', obj ); 
 	},
 
-	getData: function( obj, callback ) {
-		var methods = this._prepareMethods( obj ); 
+	getData: function( obj ) {
+		var methods = this._prepareMethods( 'getFilmInfoFull', obj ); 
 
 		obj = {
 			methods:    methods, 
@@ -82,9 +85,7 @@ FilmwebDB.prototype = {
 			version:    settings.version
 		};
 
-		this.ajax( 'data', obj, function( response ) {
-			callback( null, convert.responseData2obj( response ) ); 
-		}); 
+		this.ajax( 'data', obj );
 	}
 };
 
@@ -92,18 +93,18 @@ emitter(FilmwebDB.prototype);
 
 x = new FilmwebDB();
 
-var d = { getFilmInfoFull: [1,2,3,5,6,7,8,9,10,11,12,13,14] };
+var d = { id: [10] };
+var q = { q: 'oko' };
 
-x.getData(d, function(err, response) {});
+// x.getData(d, function(err, response) {
+// 	console.log(response);
+// });
 
-x.on('response', function(err, response) {
-	console.log(response.responseText);
+x.getData(d);
+
+x.on('response', function(type, data) {
+	console.log(data);
 });
-
-
-
-
-
 
 // var convertData = function(str) {
 // 	var obj   = { items: [] };
