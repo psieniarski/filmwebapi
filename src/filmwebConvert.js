@@ -67,7 +67,7 @@ module.exports = {
 					votes:         film[3],
 					genre:         film[4],
 					year:          film[5],
-					thumbnails:    film[11],
+					thumbnails:    settings.urls.img + film[11],
 					releaseDate:   film[13],
 					releaseDatePL: film[13],
 					country:       film[18],
