@@ -20,7 +20,7 @@ var FilmwebAPI = function() {
 						console.log( response );
 						for ( var prop in response.items ) {
 							if ( obj.hasOwnProperty( prop ) ) {
-								if ( response[prop] == 'id' ) {
+								if ( prop == 'id' ) {
 									console.log( response[prop] ); 
 								}
 							}
