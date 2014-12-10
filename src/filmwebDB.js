@@ -101,7 +101,7 @@ FilmwebDB.prototype = {
 
 emitter(FilmwebDB.prototype);
 
-new FilmwebDB(x);
+// new FilmwebDB(x);
 
 // var d = { id: [10] };
 // var q = { q: 'oko' };
