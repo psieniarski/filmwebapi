@@ -64,9 +64,8 @@ FilmwebDB.prototype = {
 			return; 
 		} 
 		xhr = new XMLHttpRequest();
-		xhr.timestamp = 'oko'
-		console.log(xhr.timestamp);
-		
+		xhr.timestamp = 'oko';
+				
 		xhr.onreadystatechange = function() {
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
