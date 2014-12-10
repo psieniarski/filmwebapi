@@ -101,7 +101,6 @@ FilmwebDB.prototype = {
 };
 
 emitter( FilmwebDB.prototype );
-
 module.exports = FilmwebDB; 
 
 // x.getData(d, function(err, response) {
