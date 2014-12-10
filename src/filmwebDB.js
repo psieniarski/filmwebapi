@@ -64,7 +64,8 @@ FilmwebDB.prototype = {
 			return; 
 		} 
 		xhr = new XMLHttpRequest();
-		xhr.timestamp = 'test';
+		
+		console.log(xhr);
 		
 		xhr.onreadystatechange = function() {
 		    if ( xhr.readyState == 4 ) {
