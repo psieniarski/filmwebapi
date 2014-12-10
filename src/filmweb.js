@@ -4,7 +4,7 @@ var FilmwebAPI = require('filmwebAPI');
 var fapi = new FilmwebAPI(); 
 var fdb  = new FilmwebDB( fapi );
 
-for (var i = 10 - 1; i >= 0; i--) {
+for (var i = 2 - 1; i >= 0; i--) {
 	fapi.movies.list({ 
 		q: 'oko'
 	}).execute(function( response ) {
