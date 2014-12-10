@@ -22,7 +22,7 @@ var FilmwebAPI = function() {
 	})();
 
 	this._request = function( type, obj, callback ) {
-		var timestamp = _uuid;
+		var timestamp = _uuid();
 
 		callbacks[timestamp] = callback;
 		that.emit( 'request', type, obj, timestamp );
