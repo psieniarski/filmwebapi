@@ -12,11 +12,19 @@ var FilmwebAPI = function() {
 	this.movies = {
 		list: function( obj ) {
 			return {
-				execute: function( response ) {
+				execute: function( callback ) {
 					var timestamp = new Date().getTime();
 
 					that.emit( 'request', 'search', obj, timestamp );
-					callbacks[timestamp] = response; 
+					callbacks[timestamp] = function( response ) {
+						for ( prop in response ) {
+							if ( obj.hasOwnProperty( prop ) ) {
+								if ( response[prop] == 'id' ) {
+									console.log( response[prop] ); 
+								}
+							}
+						}
+					}; 
 				}
 			};
 		}
