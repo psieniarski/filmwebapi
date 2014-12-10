@@ -20,11 +20,11 @@ FilmwebDB = function( client ) {
 		that.emit( 'response', response );		
 	});
 
-	client.on('request', function( type, obj ) {
+	client.on('request', function( type, obj, timestamp ) {
 		if ( type == 'data' ) {
-			that.getData( obj ); 
+			that.getData( obj, timestamp ); 
 		} else if ( type == 'search' ) {
-			that.search( obj );
+			that.search( obj, timestamp );
 		}
 	});
 };
