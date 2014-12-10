@@ -16,7 +16,7 @@ FilmwebAPI.prototype = {
 						console.log( response );
 					}); 
 				}
-			}
+			};
 		}
 	}
 };
