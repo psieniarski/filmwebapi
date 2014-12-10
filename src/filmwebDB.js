@@ -70,7 +70,7 @@ FilmwebDB.prototype = {
 		    	if ( xhr.status == 200 ) {
 		    		that.emit('xhr', type, xhr);
 		    	} else {
-		    		that.emit( 'error', new Error( 'Error: ' + xhr.status ) );			
+		    		that.emit( 'error', new Error( xhr.status ) );			
 		    	}
 		    }
 		};
