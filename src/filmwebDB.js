@@ -68,7 +68,7 @@ FilmwebDB.prototype = {
 		xhr.onreadystatechange = function() {
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
-		    		console.log( xhr.getResponseHeader( 'date' ).getDate() );
+		    		console.log( xhr.getResponseHeader( 'date' ) );
 		    		that.emit('xhr', type, xhr);
 		    	} else {
 		    		that.emit( 'error', new Error( 'Error: ' + xhr.status ) );			
