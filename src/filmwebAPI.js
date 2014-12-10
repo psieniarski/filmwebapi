@@ -24,7 +24,7 @@ var FilmwebAPI = function() {
 			return {
 				execute: function( callback ) {
 					that._request( 'search', obj, function( response ) {
-						console.log( response );
+						callback( response );
 					});
 				}
 			};
