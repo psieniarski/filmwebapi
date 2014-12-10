@@ -8,7 +8,6 @@ var FilmwebAPI = function() {
 		var callback = callbacks[timestamp];
 		callback( response );
 		delete callbacks[timestamp];
-		console.log(callbacks);
 	}); 
 
 	this._uuid = (function() {
