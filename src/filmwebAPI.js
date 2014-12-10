@@ -1,4 +1,4 @@
-var emitter 	   = require( 'emitter-mixin' );
+var emitter = require( 'emitter-mixin' );
 
 
 var filmwebAPI = function( source ) {
