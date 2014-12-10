@@ -16,7 +16,7 @@ FilmwebDB = function( client ) {
 	});
 
 	this.on('xhr', function( type, xhr ) {
-		var response = convert.str2obj( type, xhr.responseText );
+		var response = convert.str2osbj( type, xhr.responseText );
 		that.emit( 'response', type, response );
 	});
 
@@ -100,6 +100,9 @@ FilmwebDB.prototype = {
 };
 
 emitter(FilmwebDB.prototype);
+
+module.exports = FilmwebDB; 
+
 
 // new FilmwebDB(x);
 
