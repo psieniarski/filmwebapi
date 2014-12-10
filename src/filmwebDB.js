@@ -17,7 +17,7 @@ FilmwebDB = function( client ) {
 
 	this.on('xhr', function( type, xhr ) {
 		var response = convert.str2obj( type, xhr.responseText );
-		that.emit( 'response', response );		
+		that.emit( 'response', response, xhr.timestamp );		
 	});
 
 	client.on('request', function( type, obj, timestamp ) {
