@@ -17,7 +17,6 @@ var FilmwebAPI = function() {
 					var ids 	  = [];
 					var items;
 
-
 					that.emit( 'request', 'search', obj, timestamp );
 					callbacks[timestamp] = function( response ) {
 
@@ -25,9 +24,10 @@ var FilmwebAPI = function() {
 
 						for (var i = 0; i < items.length; i++) {
 						 	ids.push( parseInt( items[i].id ) );
-						 };
+						};
 
-						 console.log( ids );
+						console.log( ids );
+						// that.emit( 'request', 'data', obj, timestamp );
 					}; 
 				}
 			};
