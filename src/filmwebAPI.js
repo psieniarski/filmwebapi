@@ -13,7 +13,9 @@ var FilmwebAPI = function() {
 		list: function( obj ) {
 			return {
 				execute: function( response ) {
-					that.emit( 'request', 'search', obj );
+					var timestamp = new Date().getTime();
+					console.log(timestamp);
+					that.emit( 'request', 'search', obj, timestamp );
 					callbacks.push( response ); 
 				}
 			};
