@@ -82,11 +82,11 @@ FilmwebDB.prototype = {
 		xhr.send();	
 	},
 
-	search: function( obj ) {
-		this.ajax( 'search', obj ); 
+	search: function( obj, timestamp ) {
+		this.ajax( 'search', obj, timestamp ); 
 	},
 
-	getData: function( obj ) {
+	getData: function( obj, timestamp ) {
 		var methods = this._prepareMethods( 'getFilmInfoFull', obj ); 
 
 		obj = {
@@ -96,7 +96,7 @@ FilmwebDB.prototype = {
 			version:    settings.version
 		};
 
-		this.ajax( 'data', obj );
+		this.ajax( 'data', obj, timestamp );
 	}
 };
 
