@@ -1,6 +1,6 @@
 var emitter    = require( 'emitter-mixin' );
 
-var test;
+var test = [];
 
 var FilmwebAPI = function() {
 	var that 	  = this;
@@ -36,7 +36,7 @@ var FilmwebAPI = function() {
 			return {
 				execute: function( callback ) {
 					that._request( 'search', obj, function( response ) {
-						console.log( response );
+						test.push( response );
 					});
 				}
 			};
