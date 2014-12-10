@@ -13,14 +13,16 @@ var FilmwebAPI = function() {
 		var timestamp = new Date().getTime();
 
 		callbacks[timestamp] = callback;
-		that.emit( 'request', 'search', obj, timestamp );
+		that.emit( 'request', type, obj, timestamp );
 	},
 
 	this.movies = {
 		list: function( obj ) {
 			return {
 				execute: function( callback ) {
-
+					this._request( 'search', function( response ) {
+						console.log( response );
+					});
 				}
 			};
 		}
