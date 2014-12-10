@@ -1,5 +1,7 @@
 var emitter    = require( 'emitter-mixin' );
 
+var test;
+
 var FilmwebAPI = function() {
 	var that 	  = this;
 	var callbacks = {};
