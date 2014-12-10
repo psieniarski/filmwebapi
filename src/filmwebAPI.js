@@ -20,7 +20,7 @@ var FilmwebAPI = function() {
 
 						for (prop in response.items) {
 							if (response.items.hasOwnProperty(prop)) {
-								
+								console.log(prop)
 							}
 						}
 					}; 
