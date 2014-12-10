@@ -1,5 +1,5 @@
-var FilmwebDB  = require('filmwebDB');
-var FilmwebAPI = require('filmwebAPI');
+var FilmwebDB  = require('./filmwebDB.js');
+var FilmwebAPI = require('./filmwebAPI.js');
 
 var fapi = new FilmwebAPI(); 
 var fdb  = new FilmwebDB( fapi );

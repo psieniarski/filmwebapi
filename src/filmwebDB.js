@@ -3,9 +3,9 @@ var md5 		   = require( 'MD5' );
 var emitter 	   = require( 'emitter-mixin' );
 var sys			   = require( 'sys' );
 
-var convert		   = require( 'filmwebConvert' );
-var format		   = require( 'filmwebFormat' );
-var settings       = require( 'settings' );
+var convert		   = require( './filmwebConvert.js' );
+var format		   = require( './filmwebFormat.js' );
+var settings       = require( './settings.js' );
 
 
 FilmwebDB = function( client ) {
@@ -41,7 +41,7 @@ FilmwebDB.prototype = {
 		for ( var prop in obj ) {
 			if ( obj.hasOwnProperty( prop ) ) {
 				if ( prop.toUpperCase() == 'ID' ) {
-					if ( !Array.isArray(obj[prop]) ) {
+					if ( !Array.isArray( obj[prop] ) ) {
 						obj[prop] = [ obj[prop] ];
 					}
 					for ( var i = obj[prop].length - 1; i >= 0; i-- ) { 
