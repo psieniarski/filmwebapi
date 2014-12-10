@@ -77,8 +77,6 @@ FilmwebDB.prototype = {
 		};
 
 		xhr.open( 'GET', settings.urls[type] + convert.obj2url(data), true );
-
-		console.log(settings.urls[type] + convert.obj2url(data)); 
 		xhr.send();	
 	},
 
