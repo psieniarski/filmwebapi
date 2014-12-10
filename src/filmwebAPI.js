@@ -1,16 +1,20 @@
 var emitter    = require( 'emitter-mixin' );
 
 var FilmwebAPI = function() {
-	var that = this;
+	var that 	  = this;
+	var callbacks = {};
+
+	that.on( 'response', function( response ) {
+		var callback = callbacks[response.timestamp];
+		callback( response ); 
+	}); 
 
 	this.movies = {
 		list: function( obj ) {
 			return {
 				execute: function( response ) {
 					that.emit( 'request', 'search', obj );
-					that.on( 'response', function( type, response ) {
-						console.log( response );
-					}); 
+					callbacks.push( response ); 
 				}
 			};
 		}
