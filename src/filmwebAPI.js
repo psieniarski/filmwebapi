@@ -14,7 +14,9 @@ var FilmwebAPI = function() {
 			return {
 				execute: function( callback ) {
 					var timestamp = new Date().getTime();
+					var ids 	  = [];
 					var items;
+
 
 					that.emit( 'request', 'search', obj, timestamp );
 					callbacks[timestamp] = function( response ) {
@@ -22,7 +24,7 @@ var FilmwebAPI = function() {
 						items = response.items; 
 						for ( prop in items ) {
 							if ( items.hasOwnProperty(prop) ) {
-								console.log( items[prop].id );
+								ids.push( items[prop].id );
 							}
 						}
 					}; 
