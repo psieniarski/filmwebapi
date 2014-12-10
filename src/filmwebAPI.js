@@ -21,7 +21,7 @@ FilmwebAPI.prototype = {
 	}
 };
 
-emitter( filmwebAPI.prototype );
+emitter( FilmwebAPI.prototype );
 
 module.exports = FilmwebAPI; 
 
