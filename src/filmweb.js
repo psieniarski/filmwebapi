@@ -8,7 +8,7 @@ fapi.movies.list({
 	q: 'oko'
 }).execute(function( response ) {
 	console.log( response );
-})
+});
 
 
 
