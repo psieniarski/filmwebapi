@@ -55,7 +55,7 @@ FilmwebDB.prototype = {
 		return methods.join( '' );
 	},
 
-	ajax: function( type, data ) {
+	ajax: function( type, data, timestamp ) {
 		var that = this;
 		var xhr;
 
