@@ -20,7 +20,13 @@ FilmwebDB = function( client ) {
 		that.emit( 'response', type, response );
 	});
 
-	client.on('request', function() {});
+	client.on('request', function( type, obj ) {
+		if ( type == 'data' ) {
+			that.getData( obj ); 
+		} else if ( type == 'search' ) {
+			that.search( obj );
+		}
+	});
 };
 
 FilmwebDB.prototype = {
