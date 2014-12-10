@@ -9,7 +9,7 @@ var FilmwebAPI = function() {
 		callback( response ); 
 	}); 
 
-	this._request = function( type, callback ) {
+	this._request = function( type, obj, callback ) {
 		var timestamp = new Date().getTime();
 
 		callbacks[timestamp] = callback;
@@ -20,7 +20,7 @@ var FilmwebAPI = function() {
 		list: function( obj ) {
 			return {
 				execute: function( callback ) {
-					that._request( 'search', function( response ) {
+					that._request( 'search', obj, function( response ) {
 						console.log( response );
 					});
 				}
