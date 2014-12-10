@@ -7,7 +7,7 @@ var FilmwebAPI = function() {
 	that.on( 'response', function( response, timestamp ) {
 		var callback = callbacks[timestamp];
 		callback( response ); 
-		console.log( callbacks );
+		console.log( callbacks )l
 	}); 
 
 	this._request = function( type, obj, callback ) {
