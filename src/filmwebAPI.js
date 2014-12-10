@@ -3,7 +3,7 @@ var emitter    = require( 'emitter-mixin' );
 var FilmwebAPI = function() {
 	var that = this;
 
-	movies = {
+	var movies = {
 		list: function( obj ) {
 			return {
 				execute: function( response ) {
