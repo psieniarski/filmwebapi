@@ -1,96 +1,96 @@
-var settings  = require('settings');
-var format	  = require('filmwebFormat');
-var filmwebDB = require('filmwebDB');
+// var settings  = require('settings');
+// var format	  = require('filmwebFormat');
+// var filmwebDB = require('filmwebDB');
 
-var async     = require('async');
+// var async     = require('async');
 
 
-module.exports = {
-	// Request: function() {
-	// 	var obj = {};
+// module.exports = {
+// 	// Request: function() {
+// 	// 	var obj = {};
 
-	// 	this.moviesList = function(data) {
-	// 		return {
-	// 			execute: function(response) {
-	// 				console.log(response);
-	// 				filmwebDB.search(data, response);
-	// 			}
-	// 		};
-	// 	};
-	// }
+// 	// 	this.moviesList = function(data) {
+// 	// 		return {
+// 	// 			execute: function(response) {
+// 	// 				console.log(response);
+// 	// 				filmwebDB.search(data, response);
+// 	// 			}
+// 	// 		};
+// 	// 	};
+// 	// }
 
-	dataRequests:   [],
-	searchRequests: [], 
-	delay: 			50, 
-	timeout: 		null, 
+// 	dataRequests:   [],
+// 	searchRequests: [], 
+// 	delay: 			50, 
+// 	timeout: 		null, 
 
-	add: function(req) {
-		var that = this; 
+// 	add: function(req) {
+// 		var that = this; 
 
-		if ( req.type == 'search' ) {
-			flimwebDB.getData(req.data, function(err, response) {
+// 		if ( req.type == 'search' ) {
+// 			flimwebDB.getData(req.data, function(err, response) {
 
-			});
+// 			});
 
-		} else if ( req.type == 'data' ) {
-			this.dataRequests.push(req);
-		}
+// 		} else if ( req.type == 'data' ) {
+// 			this.dataRequests.push(req);
+// 		}
 		 	
-		if (!this.timeout) {
-			setTimeout(function() {
-				that.flush();
-			}, this.delay);
-		}
-	},
+// 		if (!this.timeout) {
+// 			setTimeout(function() {
+// 				that.flush();
+// 			}, this.delay);
+// 		}
+// 	},
 
-	flush: function() {
+// 	flush: function() {
 		
-	}
-};
-
-module.exports.addRequest({
-	type: 
-});
-
-
-// Request.prototype.getList = function() {
-
-
-
-
+// 	}
 // };
 
-// Request.prototype.prepareMethods = function(obj) {
-// 	var methods = [];
-
-// 	for (prop in obj) {
-// 		if (obj.hasOwnProperty(prop)) {
-// 			if (prop == 'getFilmInfoFull') {
-// 				for (var i = obj[prop].length - 1; i >= 0; i--) { 
-// 					methods.push(prop + ' ' + brackets( obj[prop][i] ) + '\\n');
-// 				};
-// 			} else {
-// 				methods.push(prop + ' ' + JSON.stringify(obj[prop]) + '\\n');			
-// 			}
-// 		}
-// 	}
-// 	return methods.join('');
-// }
+// module.exports.addRequest({
+// 	type: 
+// });
 
 
-// Request.prototype.createSigniature = function(method) {
-// 	var hash = md5(method + settings.appId + settings.apiKey);
-// 	return settings.version + ',' + hash;
-// }
+// // Request.prototype.getList = function() {
 
 
-// // Zamiena obiekt na zakodowany łańcuch znaków URI
-// var serialize = function(obj) {
-// 	var arr = []; 
-// 	for (prop in obj) {
-// 		if (obj.hasOwnProperty(prop)) {
-// 			arr.push(encodeURIComponent(prop) + '=' + encodeURIComponent(obj[prop]));
-// 		}
-// 	}
-// 	return arr.join('&');
-// }
+
+
+// // };
+
+// // Request.prototype.prepareMethods = function(obj) {
+// // 	var methods = [];
+
+// // 	for (prop in obj) {
+// // 		if (obj.hasOwnProperty(prop)) {
+// // 			if (prop == 'getFilmInfoFull') {
+// // 				for (var i = obj[prop].length - 1; i >= 0; i--) { 
+// // 					methods.push(prop + ' ' + brackets( obj[prop][i] ) + '\\n');
+// // 				};
+// // 			} else {
+// // 				methods.push(prop + ' ' + JSON.stringify(obj[prop]) + '\\n');			
+// // 			}
+// // 		}
+// // 	}
+// // 	return methods.join('');
+// // }
+
+
+// // Request.prototype.createSigniature = function(method) {
+// // 	var hash = md5(method + settings.appId + settings.apiKey);
+// // 	return settings.version + ',' + hash;
+// // }
+
+
+// // // Zamiena obiekt na zakodowany łańcuch znaków URI
+// // var serialize = function(obj) {
+// // 	var arr = []; 
+// // 	for (prop in obj) {
+// // 		if (obj.hasOwnProperty(prop)) {
+// // 			arr.push(encodeURIComponent(prop) + '=' + encodeURIComponent(obj[prop]));
+// // 		}
+// // 	}
+// // 	return arr.join('&');
+// // }
