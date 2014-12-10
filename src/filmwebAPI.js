@@ -8,8 +8,8 @@ var FilmwebAPI = function() {
 			return {
 				execute: function( response ) {
 					console.log(that);
-					this.context.emit( 'request', 'search', obj.q );
-					this.context.on( 'response', function( type, response ) {
+					that.context.emit( 'request', 'search', obj.q );
+					that.context.on( 'response', function( type, response ) {
 						console.log( response );
 					}); 
 				}
