@@ -1,14 +1,23 @@
+var emitter 	   = require( 'emitter-mixin' );
 
-var filmwebAPI = function(source) {
+
+var filmwebAPI = function( source ) {
 	this.source = source;
 };
 
 filmwebAPI.prototype = {
 	movies: {
-		
+		list: function( obj ) {
+			return {
+				execute: function( response ) {
+
+				}
+			}
+		}
 	}
 };
 
+emitter( filmwebAPI.prototype );
 
 
 // movies: {
