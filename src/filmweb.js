@@ -6,7 +6,7 @@ var fdb  = new FilmwebDB( fapi );
 
 for (var i = 1 - 1; i >= 0; i--) {
 	fapi.movies.list({ 
-		q: 'oko'
+		q: 'Dzień świra'
 	}).execute(function( response ) {
 		console.log( response );
 	});
