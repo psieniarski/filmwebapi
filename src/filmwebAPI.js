@@ -1,7 +1,7 @@
 var emitter    = require( 'emitter-mixin' );
 
 
-var FilmwebAPI = function( source ) {
+var FilmwebAPI = function() {
 	var that     = this; 
 	this.source  = source;
 };
