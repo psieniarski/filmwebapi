@@ -6,7 +6,7 @@ var FilmwebAPI = function( source ) {
 	this.source  = source;
 };
 
-filmwebAPI.prototype = {
+FilmwebAPI.prototype = {
 	movies: {
 		list: function( obj ) {
 			return {
