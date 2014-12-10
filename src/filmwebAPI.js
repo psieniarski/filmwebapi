@@ -45,7 +45,6 @@ var FilmwebAPI = function() {
 };
 
 emitter( FilmwebAPI.prototype );
-console.log(test);
 module.exports = FilmwebAPI; 
 
 
