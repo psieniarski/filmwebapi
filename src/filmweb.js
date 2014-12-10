@@ -1,2 +1,2 @@
-var FilmwebDB = require('filmwebDB');
+var FilmwebDB  = require('filmwebDB');
 var FilmwebAPI = require('filmwebAPI');
