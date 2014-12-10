@@ -9,14 +9,18 @@ var settings       = require( 'settings' );
 
 
 FilmwebDB = function( client ) {
+	var that = this;
+
 	this.on( 'error', function( err ) {
 		sys.debug(err);
 	});
 
 	this.on('xhr', function( type, xhr ) {
 		var response = convert.str2obj( type, xhr.responseText );
-		this.emit( 'response', type, response );
+		that.emit( 'response', type, response );
 	});
+
+	client.on('request', function() {});
 };
 
 FilmwebDB.prototype = {
