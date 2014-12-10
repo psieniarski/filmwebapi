@@ -14,12 +14,14 @@ var FilmwebAPI = function() {
 			return {
 				execute: function( callback ) {
 					var timestamp = new Date().getTime();
+					var items;
 
 					that.emit( 'request', 'search', obj, timestamp );
 					callbacks[timestamp] = function( response ) {
 
-						for (prop in response.items) {
-							if (response.items.hasOwnProperty(prop)) {
+						items = response.items; 
+						for ( prop in items ) {
+							if ( items.hasOwnProperty(prop) ) {
 								console.log(prop)
 							}
 						}
