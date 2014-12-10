@@ -104,15 +104,6 @@ emitter( FilmwebDB.prototype );
 
 module.exports = FilmwebDB; 
 
-
-var test = new FilmwebDB(x);
-
-var d = { id: [10] };
-var q = { q: 'oko' };
-
-test.emit( 'request', 'search', { q: 'oko' } );
-
-
 // x.getData(d, function(err, response) {
 // 	console.log(response);
 // });
