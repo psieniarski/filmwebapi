@@ -3,7 +3,6 @@ var emitter    = require( 'emitter-mixin' );
 
 var FilmwebAPI = function() {
 	var that     = this; 
-	this.source  = source;
 };
 
 FilmwebAPI.prototype = {
