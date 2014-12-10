@@ -18,12 +18,9 @@ var FilmwebAPI = function() {
 					that.emit( 'request', 'search', obj, timestamp );
 					callbacks[timestamp] = function( response ) {
 
-						for ( var prop in response.items ) {
-							if ( response.items.hasOwnProperty( prop ) ) {
-								if ( prop == 'id' ) {
-									console.log( response[prop] ); 
-
-								}
+						for (prop in response.items) {
+							if (response.items.hasOwnProperty(prop)) {
+								
 							}
 						}
 					}; 
