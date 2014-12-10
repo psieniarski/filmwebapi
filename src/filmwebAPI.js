@@ -1,4 +1,4 @@
-var emitter = require( 'emitter-mixin' );
+var emitter      = require( 'emitter-mixin' );
 
 
 var filmwebAPI = function( source ) {
@@ -12,7 +12,7 @@ filmwebAPI.prototype = {
 			return {
 				execute: function( response ) {
 					that.emit( 'request', 'search', obj.q );
-					this.source.on( 'response', function() {
+					this.source.on( 'response', function(  ) {
 
 					}); 
 				}
