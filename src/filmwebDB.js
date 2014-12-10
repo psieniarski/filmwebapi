@@ -99,7 +99,7 @@ FilmwebDB.prototype = {
 	}
 };
 
-emitter(FilmwebDB.prototype);
+emitter( FilmwebDB.prototype );
 
 module.exports = FilmwebDB; 
 
