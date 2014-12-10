@@ -101,20 +101,20 @@ FilmwebDB.prototype = {
 
 emitter(FilmwebDB.prototype);
 
-x = new FilmwebDB();
+new FilmwebDB(x);
 
-var d = { id: [10] };
-var q = { q: 'oko' };
+// var d = { id: [10] };
+// var q = { q: 'oko' };
 
 // x.getData(d, function(err, response) {
 // 	console.log(response);
 // });
 
-x.getData(d);
+// x.getData(d);
 
-x.on('response', function(type, data) {
-	console.log(data);
-});
+// x.on('response', function(type, data) {
+// 	console.log(data);
+// });
 
 // var convertData = function(str) {
 // 	var obj   = { items: [] };
