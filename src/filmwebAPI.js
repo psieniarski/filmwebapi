@@ -36,10 +36,6 @@ emitter( FilmwebAPI.prototype );
 module.exports = FilmwebAPI; 
 
 
-setTimeout(function() {
-	console.log(test);
-}, 2000)
-
 
 
 // movies: {
