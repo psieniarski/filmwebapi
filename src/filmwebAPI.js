@@ -9,13 +9,6 @@ var FilmwebAPI = function() {
 		callback( response );
 	}); 
 
-	this._request = function( type, obj, callback ) {
-		var timestamp = new Date().getTime();
-
-		callbacks[timestamp] = callback;
-		that.emit( 'request', type, obj, timestamp );
-	};
-
 	this._uuid = (function() {
 		function s4() {
 		return  Math.floor((1 + Math.random()) * 0x10000)
@@ -27,6 +20,13 @@ var FilmwebAPI = function() {
 		       s4() + '-' + s4() + s4() + s4();
 		};
 	})();
+
+	this._request = function( type, obj, callback ) {
+		var timestamp = _uuid;
+
+		callbacks[timestamp] = callback;
+		that.emit( 'request', type, obj, timestamp );
+	};
 
 	this.movies = {
 		list: function( obj ) {
