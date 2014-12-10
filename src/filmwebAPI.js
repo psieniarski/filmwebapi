@@ -26,15 +26,6 @@ module.exports = FilmwebAPI;
 
 
 
-var test = new FilmwebDB(x);
-var d 	 = { id: [10] };
-var q 	 = { q: 'oko' };
-
-test.emit( 'request', 'search', { q: 'oko' } );
-
-
-
-
 // movies: {
 
 		
