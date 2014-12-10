@@ -12,8 +12,8 @@ filmwebAPI.prototype = {
 			return {
 				execute: function( response ) {
 					that.emit( 'request', 'search', obj.q );
-					this.source.on( 'response', function(  ) {
-
+					this.source.on( 'response', function( type, response ) {
+						console.log( response );
 					}); 
 				}
 			}
