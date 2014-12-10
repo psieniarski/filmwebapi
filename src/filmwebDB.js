@@ -17,7 +17,9 @@ FilmwebDB = function( client ) {
 
 	this.on('xhr', function( type, xhr ) {
 		var response = convert.str2obj( type, xhr.responseText );
-		that.emit( 'response', type, response );
+		that.emit( 'response', type, response );		
+		console.log(xhr.timestamp);
+
 	});
 
 	client.on('request', function( type, obj ) {
@@ -65,7 +67,7 @@ FilmwebDB.prototype = {
 		} 
 		xhr = new XMLHttpRequest();
 		xhr.timestamp = 'oko';
-				
+
 		xhr.onreadystatechange = function() {
 		    if ( xhr.readyState == 4 ) {
 		    	if ( xhr.status == 200 ) {
