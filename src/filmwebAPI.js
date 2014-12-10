@@ -12,8 +12,8 @@ var FilmwebAPI = function() {
 	this._request = function( type, callback ) {
 		var timestamp = new Date().getTime();
 
-		that.emit( 'request', 'search', obj, timestamp );
 		callbacks[timestamp] = callback;
+		that.emit( 'request', 'search', obj, timestamp );
 	},
 
 	this.movies = {
