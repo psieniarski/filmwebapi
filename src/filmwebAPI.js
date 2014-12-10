@@ -24,7 +24,7 @@ var FilmwebAPI = function() {
 						items = response.items;
 
 						for (var i = 0; i < items.length; i++) {
-						 	ids.push( items[i].id );
+						 	ids.push( parseInt( items[i].id ) );
 						 };
 
 						 console.log( ids );
