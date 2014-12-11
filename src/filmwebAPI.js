@@ -6,7 +6,7 @@ var FilmwebAPI = function() {
 	var that 	  = this;
 	var callbacks = {};
 
-	that.on( 'response', function( response, id ) {
+	this.on( 'response', function( response, id ) {
 		var callback = callbacks[id];
 		callback( response );
 		delete callbacks[id];
