@@ -1,5 +1,6 @@
 {
   "name": "filmweb.api",
+  "main": "src/filmweb.js",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.5",
@@ -15,3 +16,5 @@
     "emitter-mixin": "0.0.3"
   }
 }
+
+

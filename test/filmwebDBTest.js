@@ -1,62 +1,70 @@
 var vows           = require('vows');
 var assert         = require('assert');
 var XMLHttpRequest = require('xhr2');
+var events         = require('events');
 var filmwebDB      = require('filmwebDB');
+
+function request() {
+    var emitter = new events.EventEmitter(); 
+    var obj     = { q: 'oko' };
+    var fdb     = new filmwebDB(emitter);
+
+    emitter.emit('request', 'search', obj, 1234567 );
+    return fdb;
+}
 
 
 // Create a Test Suite
 vows.describe('Interfejs niskopoziomowy').addBatch({
-    'Asynchroniczna funkcja search': {
-        topic: function () { 
-            var obj = { q: 'oko' }; 
-            var that = this;
-            
-            filmwebDB.search(obj, this.callback);
+    'Emisja zdarzenia request przez emiter': {
+        topic: function () {
+            var fdb = request();
 
             // process.on('uncaughtException', function(err) {
             //     console.log('Caught exception: ' + err.stack);
             // });
         },
 
-        'zwraca obiekt xhr': function (err, response) {
-            assert.instanceOf(response, XMLHttpRequest);
-        },
+        'skutkuje emisja zdarzenia response': {
+            topic: function(topic) {
+                console.log(topic)
+                emitter.on('response', this.callback);    
+            }, 
 
-        'posiada metode responseText, ktora zwraca ciag znakow': function(err, response) {
-            assert.isString(response.responseText);
-        }
-    },
+            'ktorego parametr response jest obiektem': function(response, id) {
+               assert.isObject(response); 
+            },
 
-    'Asynchroniczna funkcja getData': {
-        topic: function () { 
+            'ktorego parametr id jest liczba:': function(response, id) {
+                console.log(response, id)
+                assert.isNumber(id);
+            }, 
             
-            var obj = {   
-                signature: '1.0,afc5f9ef12945c93e11789b43028698f',
-                methods: 'getFilmInfoFull [10]\\ngetFilmInfoFull [8]\\ngetFilmInfoFull [7]\\ngetFilmInfoFull [6]\\ngetFilmInfoFull [5]\\ngetFilmInfoFull [4]\\ngetFilmInfoFull [3]\\ngetFilmInfoFull [2]\\ngetFilmInfoFull [1]\\n',
-                appId: 'android',
-                version: '1.0' 
-            };
             
-            filmwebDB.getData(obj, this.callback);
         },
 
-        'zwraca obiekt xhr': function (err, response) {
-            assert.instanceOf(response, XMLHttpRequest);
-        },
+        // 'ktorego parametr response jest obiektem': function (response, id) {
+        //     assert.isObject(response);
+        // },
 
-        'posiada metode responseText, ktora zwraca ciag znakow': function(err, response) {
-            assert.isString(response.responseText);
-        }
-    },
-
-    'Asynchroniczna funkcja ajax': {
-        topic: function() {
-            filmwebDB.ajax('unsupported', {}, this.callback);
-        },
-
-        'zglasza blad dla niebslugiwanego typu' : function(err, response) {
-            assert.isNotNull(err);
-        }
+        // 'a parametr id jest liczba ': function(response, id) {
+        //     assert.isNumber(id);
+        // }  
     }
+    
+    }).addBatch({ 
+        'Metoda _prepareMethods': {
+            topic: function() {
+                var emitter    = new events.EventEmitter(); 
+                var fdb        = new filmwebDB(emitter);
+                var obj        = { id: [1,2,3,4,5] };
+                var methodName = 'getFilmInfoFull';
 
-}).run(); // Run it
+                return fdb._prepareMethods(methodName, obj);
+            },
+
+            'zwraca ciag znakow': function(topic) {
+                assert.isString(topic);
+            }
+        }
+    }).run(); // Run it

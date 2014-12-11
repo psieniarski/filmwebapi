@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            css: {
+            all: {
                 options: {
                   livereload: true
                 },
@@ -47,13 +47,13 @@ module.exports = function(grunt) {
         // }
 
 
-        // browserify: {
-        //     dist: {
-        //         files: {
-        //           'playground/bundle.js': ['playground/api.js'],
-        //         }
-        //     }
-        // }
+        browserify: {
+            dist: {
+                files: {
+                  'build/bundle.js': ['src/*.js'],
+                }
+            }
+        }
 
     });
 
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-serve');
     // grunt.loadNpmTasks('grunt-contrib-symlink');
 
-//  grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-browserify');
     
     grunt.registerTask('default', ['watch']);
 

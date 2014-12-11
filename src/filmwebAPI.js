@@ -1,22 +1,22 @@
 var emitter    = require( 'emitter-mixin' );
-var uuid       = require( 'uuid' );
+var uuid       = require( './uuid.js' );
 
 
 var FilmwebAPI = function() {
 	var that 	  = this;
 	var callbacks = {};
 
-	that.on( 'response', function( response, timestamp ) {
-		var callback = callbacks[timestamp];
+	that.on( 'response', function( response, id ) {
+		var callback = callbacks[id];
 		callback( response );
-		delete callbacks[timestamp];
+		delete callbacks[id];
 	}); 
 
 	this._request = function( type, obj, callback ) {
-		var timestamp = uuid();
+		var id = uuid();
 
-		callbacks[timestamp] = callback;
-		that.emit( 'request', type, obj, timestamp );
+		callbacks[id] = callback;
+		that.emit( 'request', type, obj, id );
 	};
 
 	this.movies = {
@@ -43,8 +43,6 @@ var FilmwebAPI = function() {
 
 emitter( FilmwebAPI.prototype );
 module.exports = FilmwebAPI; 
-
-
 
 
 // movies: {

@@ -17,14 +17,14 @@ FilmwebDB = function( client ) {
 
 	this.on('xhr', function( type, xhr ) {
 		var response = convert.str2obj( type, xhr.responseText );
-		client.emit( 'response', response, xhr.timestamp );		
+		client.emit( 'response', response, xhr.id );		
 	});
 
-	client.on('request', function( type, obj, timestamp ) {
+	client.on('request', function( type, obj, id ) {
 		if ( type == 'data' ) {
-			that.getData( obj, timestamp ); 
+			that.getData( obj, id ); 
 		} else if ( type == 'search' ) {
-			that.search( obj, timestamp );
+			that.search( obj, id );
 		}
 	});
 };
@@ -55,7 +55,7 @@ FilmwebDB.prototype = {
 		return methods.join( '' );
 	},
 
-	ajax: function( type, data, timestamp ) {
+	ajax: function( type, data, id ) {
 		var that = this;
 		var xhr;
 
@@ -65,7 +65,7 @@ FilmwebDB.prototype = {
 		} 
 		
 		xhr = new XMLHttpRequest();
-		xhr.timestamp = timestamp;
+		xhr.id = id;
 
 		xhr.onreadystatechange = function() {
 		    if ( xhr.readyState == 4 ) {
@@ -81,11 +81,11 @@ FilmwebDB.prototype = {
 		xhr.send();	
 	},
 
-	search: function( obj, timestamp ) {
-		this.ajax( 'search', obj, timestamp ); 
+	search: function( obj, id ) {
+		this.ajax( 'search', obj, id ); 
 	},
 
-	getData: function( obj, timestamp ) {
+	getData: function( obj, id ) {
 		var methods = this._prepareMethods( 'getFilmInfoFull', obj ); 
 
 		obj = {
@@ -95,7 +95,7 @@ FilmwebDB.prototype = {
 			version:    settings.version
 		};
 
-		this.ajax( 'data', obj, timestamp );
+		this.ajax( 'data', obj, id );
 	}
 };
 
