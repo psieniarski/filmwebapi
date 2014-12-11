@@ -43,7 +43,7 @@ var FilmwebAPI = function() {
 
 emitter( FilmwebAPI.prototype );
 
-console.log(FilmwebAPI)
+console.log(FilmwebAPI.on)
 
 module.exports = FilmwebAPI; 
 
