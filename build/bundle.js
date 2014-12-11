@@ -301,7 +301,7 @@ module.exports = charenc;
  * dependencies.
  */
 
-var Emitter = require('event-emitter').EventEmitter
+var Emitter = require('event-emitter')
   , proto   = Emitter.prototype;
 
 /**
