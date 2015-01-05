@@ -1,5 +1,5 @@
 {
-  "name": "filmweb.api",
+  "name": "filmweb-api",
   "main": "src/filmweb.js",
   "version": "0.1.0",
   "devDependencies": {

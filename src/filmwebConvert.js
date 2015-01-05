@@ -70,7 +70,7 @@ module.exports = {
 					thumbnails:    settings.urls.img + film[11],
 					releaseDate:   film[13],
 					releaseDatePL: film[13],
-					country:       film[18],
+					country:       film[18].split(','),
 					description:   film[19],
     			}
 
