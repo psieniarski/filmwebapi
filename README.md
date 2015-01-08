@@ -1,1 +1,1 @@
-# Unofficial JavaScript Filmweb API client 
+# Unofficial Filmweb API JavaScript client 
