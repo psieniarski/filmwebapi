@@ -10,12 +10,19 @@ module.exports = {
 
 	search: function(q, callback) {
 		fapi.movies.list({ 
-			q: 'oko'
+			q: q
 		}).execute(function( response ) {
 			callback( response );
 		});
 	}
 };
+
+// module.exports.search('oko', function(response) {
+// 	console.log(response);
+// });
+
+
+
 
 
 
