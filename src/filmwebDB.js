@@ -1,10 +1,10 @@
 var XMLHttpRequest = require( 'xhr2' );
-var md5 		   = require( 'MD5' );
+var md5            = require( 'MD5' );
 var emitter 	   = require( 'emitter-mixin' );
-var sys			   = require( 'sys' );
+var sys	           = require( 'sys' );
 
-var convert		   = require( './filmwebConvert.js' );
-var format		   = require( './filmwebFormat.js' );
+var convert        = require( './filmwebConvert.js' );
+var format         = require( './filmwebFormat.js' );
 var settings       = require( './settings.js' );
 
 
@@ -101,26 +101,5 @@ FilmwebDB.prototype = {
 
 emitter( FilmwebDB.prototype );
 module.exports = FilmwebDB; 
-
-// x.getData(d, function(err, response) {
-// 	console.log(response);
-// });
-
-// x.getData(d);
-
-// x.on('response', function(type, data) {
-// 	console.log(data);
-// });
-
-// var convertData = function(str) {
-// 	var obj   = { items: [] };
-// 	var arr   = str.split('\n');
-// 	var films = [];
-
-// 	for (var i = arr.length - 1; i >= 0; i--) {
-// 		films.push(arr[i].split(','));
-// 	}
-// 	return films;
-// }
 
 
