@@ -1,7 +1,6 @@
 var emitter    = require( 'emitter-mixin' );
 var uuid       = require( './uuid.js' );
 
-
 var FilmwebAPI = function() {
   var that    = this;
   var callbacks = {};

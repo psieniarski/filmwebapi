@@ -17,9 +17,6 @@ module.exports = {
   }
 };
 
-// module.exports.search('oko', function(response) {
-//  console.log(response);
-// });
 
 
 

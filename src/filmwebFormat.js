@@ -1,6 +1,6 @@
 module.exports = {
-	brackets: function(str) {
-		return '[' + str + ']'; 
-	}
+ brackets: function(str) {
+  return '[' + str + ']'; 
+ }
 }
 
