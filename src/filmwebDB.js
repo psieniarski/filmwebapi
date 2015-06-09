@@ -2,7 +2,6 @@ var XMLHttpRequest = require( 'xhr2' );
 var md5            = require( 'MD5' );
 var emitter        = require( 'emitter-mixin' );
 var sys            = require( 'sys' );
-
 var convert        = require( './filmwebConvert.js' );
 var format         = require( './filmwebFormat.js' );
 var settings       = require( './settings.js' );
@@ -101,3 +100,4 @@ FilmwebDB.prototype = {
 
 emitter( FilmwebDB.prototype );
 module.exports = FilmwebDB; 
+
