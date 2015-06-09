@@ -1,6 +1,6 @@
 var XMLHttpRequest = require( 'xhr2' );
 var md5            = require( 'MD5' );
-var emitter 	   = require( 'emitter-mixin' );
+var emitter 	     = require( 'emitter-mixin' );
 var sys	           = require( 'sys' );
 
 var convert        = require( './filmwebConvert.js' );
